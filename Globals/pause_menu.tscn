@@ -1,0 +1,68 @@
+[gd_scene load_steps=4 format=3 uid="uid://dkfnc60rphdi"]
+
+[ext_resource type="Theme" uid="uid://bppm3cpmpy75" path="res://UI_Test/resources/themes/lab.tres" id="1_gys32"]
+[ext_resource type="Script" uid="uid://de74iv3286hu" path="res://Globals/pause_menu.gd" id="2_2frkd"]
+[ext_resource type="PackedScene" uid="uid://buwxl0giqo6af" path="res://UI_Test/scenes/menus/options_menu/master_options_menu_with_tabs.tscn" id="3_2frkd"]
+
+[node name="pause_menu" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_gys32")
+script = ExtResource("2_2frkd")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -43.0
+offset_top = -56.5
+offset_right = 43.0
+offset_bottom = 56.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ResumeButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Resume"
+
+[node name="RestartButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Restart"
+
+[node name="OptionsButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Options"
+
+[node name="QuitButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Quit"
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MasterOptionsMenu" parent="PanelContainer" instance=ExtResource("3_2frkd")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="VBoxContainer/ResumeButton" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/RestartButton" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
+
+[editable path="PanelContainer/MasterOptionsMenu"]

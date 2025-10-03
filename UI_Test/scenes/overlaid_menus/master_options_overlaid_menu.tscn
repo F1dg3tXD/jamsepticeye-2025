@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://bk1stkp08or6k"]
+
+[ext_resource type="PackedScene" path="res://addons/maaacks_menus_template/base/scenes/overlaid_menu/menus/master_options_overlaid_menu.tscn" id="1_w872m"]
+[ext_resource type="PackedScene" path="res://UI_Test/scenes/menus/options_menu/master_options_menu_with_tabs.tscn" id="2_fymw1"]
+
+[node name="MasterOptionsOverlaidMenu" instance=ExtResource("1_w872m")]
+menu_scene = ExtResource("2_fymw1")

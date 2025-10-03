@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://rn40vs80pebr"]
+
+[ext_resource type="PackedScene" uid="uid://dp3rgqaehb3xu" path="res://addons/maaacks_menus_template/base/scenes/menus/options_menu/input/input_options_menu.tscn" id="1_tmspq"]
+[ext_resource type="Script" uid="uid://cg246wbq4tgei" path="res://UI_Test/scenes/menus/options_menu/input/input_options_menu.gd" id="2_a1beq"]
+[ext_resource type="PackedScene" uid="uid://bplfkv4erb2vw" path="res://UI_Test/scenes/menus/options_menu/input/input_icon_mapper.tscn" id="3_kw1nf"]
+
+[node name="Controls" instance=ExtResource("1_tmspq")]
+offset_left = 47.0
+offset_top = 39.0
+offset_right = -47.0
+offset_bottom = -39.0
+script = ExtResource("2_a1beq")
+
+[node name="InputMappingContainer" parent="VBoxContainer" index="0"]
+size_flags_vertical = 1
+
+[node name="InputActionsList" parent="VBoxContainer/InputMappingContainer" index="1" node_paths=PackedStringArray("input_icon_mapper")]
+size_flags_vertical = 1
+input_icon_mapper = NodePath("../../../InputIconMapper")
+
+[node name="InputActionsTree" parent="VBoxContainer/InputMappingContainer" index="2" node_paths=PackedStringArray("input_icon_mapper")]
+input_icon_mapper = NodePath("../../../InputIconMapper")
+
+[node name="InputIconMapper" parent="." index="6" instance=ExtResource("3_kw1nf")]
+directories = Array[String]([])
+ends_with = ""
+not_ends_with = ""

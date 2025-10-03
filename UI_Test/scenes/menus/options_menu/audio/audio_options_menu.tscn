@@ -1,0 +1,11 @@
+[gd_scene load_steps=4 format=3 uid="uid://3yc0mmlx1dcm"]
+
+[ext_resource type="PackedScene" path="res://addons/maaacks_menus_template/base/scenes/menus/options_menu/audio/audio_options_menu.tscn" id="1_rtskl"]
+[ext_resource type="Script" path="res://UI_Test/scenes/menus/options_menu/audio/audio_options_menu.gd" id="2_br7hx"]
+[ext_resource type="PackedScene" path="res://UI_Test/scenes/menus/options_menu/audio/audio_input_option_control.tscn" id="3_fjxjk"]
+
+[node name="Audio" instance=ExtResource("1_rtskl")]
+script = ExtResource("2_br7hx")
+
+[node name="AudioInputOptionControl" parent="VBoxContainer" index="2" instance=ExtResource("3_fjxjk")]
+layout_mode = 2

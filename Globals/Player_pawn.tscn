@@ -1,0 +1,63 @@
+[gd_scene load_steps=5 format=3 uid="uid://blstrvusmss87"]
+
+[ext_resource type="Script" uid="uid://blf8n1iejc4qj" path="res://Globals/player_pawn.gd" id="1_j6vuq"]
+[ext_resource type="PackedScene" uid="uid://ckmmespdb8apn" path="res://models/player.tscn" id="1_w3tdh"]
+[ext_resource type="PackedScene" uid="uid://c3iofxi462mhv" path="res://UI_Test/scenes/pause_menu_controller.tscn" id="3_xb0lg"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_j6vuq"]
+
+[node name="Player_pawn" type="CharacterBody3D"]
+script = ExtResource("1_j6vuq")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_j6vuq")
+
+[node name="player" parent="." instance=ExtResource("1_w3tdh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25, 0)
+
+[node name="Skeleton3D" parent="player/Armature" index="0"]
+bones/1/rotation = Quaternion(-0.016408496, 0.05828629, 0.028445832, 0.99775964)
+bones/2/rotation = Quaternion(0.022315538, 0.068688065, 0.0032371548, 0.9973834)
+bones/3/rotation = Quaternion(0.023129476, 0.06867618, 0.0016960987, 0.9973694)
+bones/4/rotation = Quaternion(0.14162084, 0.06438463, -0.029461592, 0.9873856)
+bones/5/rotation = Quaternion(0.008647208, 0.17356293, 0.06970754, 0.98231465)
+bones/7/rotation = Quaternion(-0.55078113, -0.45843145, 0.5848437, -0.38005087)
+bones/8/rotation = Quaternion(0.19820195, -0.18221435, 0.42891997, 0.8622887)
+bones/9/rotation = Quaternion(-0.07750632, 0.0073012267, 0.6508253, 0.7552257)
+bones/10/rotation = Quaternion(-0.13424459, -0.46283805, -0.3664722, 0.7959004)
+bones/31/rotation = Quaternion(0.44278604, -0.41703427, 0.55863625, 0.56386936)
+bones/32/rotation = Quaternion(0.3418579, 0.06393499, -0.7807933, 0.51904464)
+bones/33/rotation = Quaternion(-0.02289873, -0.008990933, -0.24232163, 0.9698841)
+bones/34/rotation = Quaternion(-0.17417026, 0.4462577, 0.19895443, 0.85494804)
+bones/55/rotation = Quaternion(0.123849355, 0.23981456, 0.9492421, -0.16152364)
+bones/56/rotation = Quaternion(-0.2440852, -0.08614264, 0.026812157, 0.96554804)
+bones/57/rotation = Quaternion(0.44942078, -0.08018878, -0.025244266, 0.88935566)
+bones/60/rotation = Quaternion(-0.12719245, 0.10304706, 0.98470646, 0.059638258)
+bones/61/rotation = Quaternion(-0.19842975, -0.07413289, -0.0048838938, 0.9772953)
+bones/62/rotation = Quaternion(0.5325434, 0.12968883, 0.047906965, 0.83503497)
+
+[node name="GEO-body_male_stylized" parent="player/Armature/Skeleton3D" index="0"]
+cast_shadow = 3
+
+[node name="Head" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Head"]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0, 0)
+
+[node name="IK_Target" type="Node3D" parent="Head"]
+transform = Transform3D(0.84838086, 0, -0.52938634, -0.113289885, 0.97683316, -0.18155544, 0.51712215, 0.21400228, 0.8287266, 0, 0, -0.5154965)
+
+[node name="IK_Hands" type="Node3D" parent="Head"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.16758466, -0.013391495)
+
+[node name="IK_TargetL" type="Node3D" parent="Head/IK_Hands"]
+transform = Transform3D(-0.066489846, 0.131302, -0.9891102, -0.9786989, 0.18439148, 0.090267584, 0.19423582, 0.974043, 0.116244994, -0.034290984, -0.21924114, -0.09448388)
+
+[node name="IK_TargetR" type="Node3D" parent="Head/IK_Hands"]
+transform = Transform3D(-0.18908174, -0.079103954, 0.97877, 0.97046894, 0.13699552, 0.19855005, -0.14979312, 0.9874082, 0.050864637, -0.08710897, -0.21924114, -0.23134312)
+
+[node name="PauseMenuController" parent="." instance=ExtResource("3_xb0lg")]
+
+[editable path="player"]
