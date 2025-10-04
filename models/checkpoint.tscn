@@ -14,7 +14,7 @@ uv1_triplanar = true
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_t8377"]
 radius = 1.7797852
 
-[node name="Checkpoint" type="Node3D"]
+[node name="Checkpoint" type="Node3D" groups=["checkpoint"]]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
 script = ExtResource("1_sw8yd")
 

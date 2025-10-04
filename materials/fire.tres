@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://bqhovn4afd53f"]
+
+[ext_resource type="Texture2D" uid="uid://d3kbuj0nk7jxy" path="res://models/ice_rect_360_F_141493683_WUB4cZmHoExVnQWBLEjXny4kkWmBt7CF.png" id="1_ne1xg"]
+
+[resource]
+transparency = 4
+blend_mode = 1
+cull_mode = 2
+albedo_color = Color(1, 0.6431373, 0, 1)
+albedo_texture = ExtResource("1_ne1xg")

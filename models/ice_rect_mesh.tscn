@@ -1,0 +1,12 @@
+[gd_scene load_steps=4 format=3 uid="uid://wvc18tggt1wq"]
+
+[ext_resource type="PackedScene" uid="uid://cxnpch2hf4tsd" path="res://models/ice_rect.glb" id="1_hgn1q"]
+[ext_resource type="Material" uid="uid://0m62oxa056aq" path="res://materials/frozenguy.tres" id="2_xgaen"]
+[ext_resource type="Material" uid="uid://bk4qag1x33jn3" path="res://materials/ice_mat.tres" id="6_twt2j"]
+
+[node name="ice_rect" instance=ExtResource("1_hgn1q")]
+
+[node name="standing" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_xgaen")
+surface_material_override/1 = ExtResource("2_xgaen")
+surface_material_override/2 = ExtResource("6_twt2j")

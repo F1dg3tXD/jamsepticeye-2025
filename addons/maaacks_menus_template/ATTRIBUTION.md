@@ -1,37 +1,54 @@
 # Attribution
 ## Collaborators
 
-### Godot Menus Template
-![Maaack Plugin Icon](/addons/maaacks_menus_template/assets/plugin_logo/logo.png)  
-Author: [Marek Belski and contributors](https://github.com/Maaack/Godot-Menus-Template/graphs/contributors)  
-Source: [github: Godot-Menus-Template](https://github.com/Maaack/Godot-Menus-Template)  
-License: [MIT License](LICENSE.txt)  
+### Lead Developer   
+![F1dg3t Logo](res://UI_Test/assets/F1dg3t_Logo_Simple@4x.png)
+[F1dg3t](https://f1dg3t.itch.io)  
 
-## Sourced
+## Assets
+### Music
+
+#### - "Portal 2 Mysterious Space Background Music (No Copyright)"  
+Author: [Gravity Sound](https://www.youtube.com/@GravitySound)   
+Source: [X_h0ESSNe8E](https://www.youtube.com/watch?v=X_h0ESSNe8E)
+License: [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/)
+
+#### - "Portal Mysterious Space Background Music (No Copyright)"  
+Author: [Gravity Sound](https://www.youtube.com/@GravitySound)   
+Source: [hziFxpjRbfJc](https://www.youtube.com/watch?v=ziFxpjRbfJc)
+License: [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/)
+
+#### - "Point - Mysterious Suspense Background Music No Copyright"  
+Author: [Gravity Sound](https://www.youtube.com/@GravitySound)   
+Source: [4vHVCmkrQN0](https://www.youtube.com/watch?v=ziFxpjRbfJc)
+License: [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/)
+
+### Textures
+#### Level Editing
+Author: [Kenny](https://kenney.nl)  
+Source: [Domain : webpage.html](https://kenney.nl/assets/prototype-textures)  
+License: [CC0](https://creativecommons.org/publicdomain/zero/1.0/)
+
 #### Godot Engine Logo
 Author: Andrea Calabró  
 Source: [godotengine.org : press](https://godotengine.org/press/)  
 License: [CC BY 4.0 International](https://github.com/godotengine/godot/blob/master/LOGO_LICENSE.txt) 
 
-#### Git Logo
-Author: [Jason Long](https://bsky.app/profile/jasonlong.me)  
-Source: [git-scm.com : logos](https://git-scm.com/downloads/logos)  
-License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/) 
-
 ## Tools
 #### Godot
-![Godot Engine Logo](/addons/maaacks_menus_template/assets/godot_engine_logo/logo_vertical_color_dark.png)  
+![Godot Engine Logo](/UI_Test/assets/godot_engine_logo/logo_vertical_color_dark.png)  
 Author: [Juan Linietsky, Ariel Manzur, and contributors](https://godotengine.org/contact)  
 Source: [godotengine.org](https://godotengine.org/)  
-License: [MIT License](https://github.com/godotengine/godot/blob/master/LICENSE.txt)  
+License: [MIT License](https://github.com/godotengine/godot/blob/master/LICENSE.txt) 
 
-#### Visual Studio Code
-Author: [Microsoft](https://opensource.microsoft.com/)  
-Source: [github: vscode](https://github.com/microsoft/vscode)  
-License: [MIT License](https://github.com/microsoft/vscode/blob/main/LICENSE.txt)
+#### Godot Menus Template
+![Maaack Plugin Icon](/UI_Test/assets/plugin_logo/logo.png)  
+Author: [Marek Belski and contributors](https://github.com/Maaack/Godot-Menus-Template/graphs/contributors)  
+Source: [github: Godot-Menus-Template](https://github.com/Maaack/Godot-Menus-Template)  
+License: [MIT License](LICENSE.txt)  
 
 #### Git
-![Git Logo](/addons/maaacks_menus_template/assets/git_logo/Git-Logo-2Color.png)  
+![Git Logo](/UI_Test/assets/git_logo/Git-Logo-2Color.png)  
 Author: [Linus Torvalds](https://github.com/torvalds)  
 Source: [git-scm.com](https://git-scm.com/downloads)  
 License: [GNU General Public License version 2](https://opensource.org/licenses/GPL-2.0)

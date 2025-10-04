@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://bx4f628dg5i1j"]
+[gd_scene load_steps=23 format=3 uid="uid://bx4f628dg5i1j"]
 
 [ext_resource type="Script" uid="uid://dy1nwgp6fb4cv" path="res://UI_Test/scenes/menus/main_menu/main_menu_with_animations.gd" id="2_1gpyj"]
 [ext_resource type="PackedScene" uid="uid://bk1stkp08or6k" path="res://UI_Test/scenes/overlaid_menus/master_options_overlaid_menu.tscn" id="3_xs16x"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://b5oej1q4h7jvh" path="res://addons/maaacks_menus_template/base/scripts/ui_sound_controller.gd" id="4_twbsb"]
 [ext_resource type="PackedScene" uid="uid://bkcsjsk2ciff" path="res://addons/maaacks_menus_template/base/scenes/music_players/background_music_player.tscn" id="5_t5a0p"]
 [ext_resource type="Script" uid="uid://dmkubt2nsnsbn" path="res://addons/maaacks_menus_template/base/scenes/menus/main_menu/config_version_label.gd" id="6_6va62"]
+[ext_resource type="AudioStream" uid="uid://fr5qvphlcv58" path="res://sounds/music/＂Portal 2＂ Mysterious Space Background Music No Copyright [X_h0ESSNe8E].mp3" id="6_t5a0p"]
 [ext_resource type="Script" uid="uid://bkwlopi4qn32o" path="res://addons/maaacks_menus_template/base/scenes/menus/main_menu/config_name_label.gd" id="7_c3vvd"]
 [ext_resource type="Script" uid="uid://1nf36h0gms3q" path="res://addons/maaacks_menus_template/base/scripts/capture_focus.gd" id="8_gam6r"]
 
@@ -343,6 +344,8 @@ anim_player = NodePath("../MenuAnimationPlayer")
 parameters/conditions/intro_done = false
 
 [node name="BackgroundMusicPlayer" parent="." instance=ExtResource("5_t5a0p")]
+stream = ExtResource("6_t5a0p")
+parameters/looping = false
 
 [node name="BackgroundTextureRect" type="TextureRect" parent="."]
 layout_mode = 1

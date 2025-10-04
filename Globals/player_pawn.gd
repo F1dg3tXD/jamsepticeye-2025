@@ -6,6 +6,12 @@ extends CharacterBody3D
 @export var ice_rect_scene: PackedScene
 @export var ice_cube_scene: PackedScene
 @onready var pickup: RayCast3D = $Head/RayCast3D
+#@onready var gun_animation_tree: AnimationTree = $Head/Hand/FreezeGun/AnimationTree
+@onready var gun_animation_player: AnimationPlayer = $Head/Hand/FreezeGun/AnimationPlayer
+@onready var gun_particles: CPUParticles3D = $"Head/Hand/FreezeGun/freeze gun/CPUParticles3D"
+@onready var gun_particles_2: CPUParticles3D = $"Head/Hand/FreezeGun/freeze gun/CPUParticles3D2"
+@onready var ice_spawn: Node3D = $IceSpawn
+@onready var crosshair: Control = $Crosshair
 
 var held_object: RigidBody3D = null
 
@@ -32,13 +38,19 @@ const CROUCH_SPEED := 3.0
 var yaw: float = 0.0
 var pitch: float = 0.0
 
+# --- Melting ---
+const MELT_TIME := 1.0
+
 # --- State ---
 var is_crouching: bool = false
 var target_height: float = STAND_HEIGHT
+var ice_spawned: bool = false
 
 func _ready() -> void:
 	get_tree().paused = false
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	gun_animation_player.play("Idle")
+	crosshair.visible = false
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
@@ -50,18 +62,36 @@ func _input(event: InputEvent) -> void:
 		head.rotation.x = pitch
 	
 	if Input.is_action_just_pressed("ice"):
+		#gun_animation_tree.set("parameters/conditions/isFreeze", true)
+		#gun_animation_tree.set("parameters/conditions/!isFreeze", false)
+		gun_animation_player.play("Freeze")
+		# Wait for the "freeze" animation to finish
+		var freeze_time = 1.0  # replace with your animation’s length
+		await get_tree().create_timer(freeze_time).timeout 
 		respawn()
+		#gun_animation_tree.set("parameters/conditions/isFreeze", false)
+		#gun_animation_tree.set("parameters/conditions/!isFreeze", true)
+		gun_animation_player.play("Idle")
 		
 	if Input.is_action_just_pressed("use"):
 		if held_object:
 			# Release object
 			held_object = null
+			#gun_animation_tree.set("parameters/conditions/isGrab", false)
+			#gun_animation_tree.set("parameters/conditions/!isGrab", true)
+			gun_particles.emitting = false
+			crosshair.visible = false
 		else:
 			# Try to pick up
 			if pickup.is_colliding():
 				var collider = pickup.get_collider()
+				#crosshair.visible = true
 				if collider is RigidBody3D:
+					crosshair.visible = true
 					held_object = collider
+					#gun_animation_tree.set("parameters/conditions/isGrab", true)
+					#gun_animation_tree.set("parameters/conditions/!isGrab", false)
+					gun_particles.emitting = true
 
 func _process(delta: float) -> void:
 	# --- CONTROLLER LOOK ---
@@ -82,6 +112,18 @@ func _process(delta: float) -> void:
 		var target_pos = pickup.global_transform.origin + pickup.global_transform.basis.z * -hold_distance
 		var dir = target_pos - held_object.global_transform.origin
 		held_object.linear_velocity = dir * hold_strength
+		gun_particles.emitting = true
+		crosshair.visible = true
+		
+	if Input.is_action_pressed("shoot"):
+		var ice_block = _get_colliding_ice_block()
+		if ice_block:
+			gun_particles_2.emitting = true
+			_melt_ice_block(ice_block, delta)
+		else:
+			gun_particles_2.emitting = true
+	else:
+		gun_particles_2.emitting = false
 
 func _physics_process(delta: float) -> void:
 	# --- Gravity ---
@@ -180,24 +222,60 @@ func respawn() -> void:
 		push_error("No valid spawn point found!")
 		return
 
-	# Get player transform BEFORE teleport
-	var player_transform := global_transform
-
-	# --- Spawn ice block depending on crouch state ---
-	var ice_instance: Node3D
-	if is_crouching:
-		ice_instance = ice_cube_scene.instantiate()
+	# Check if player is inside a checkpoint area
+	if is_in_group("checkpoint"):
+		print("Player is inside a checkpoint, skipping ice block spawn")
 	else:
-		ice_instance = ice_rect_scene.instantiate()
+		# Only spawn one ice block per respawn
+		if not ice_spawned:
+			ice_spawned = true  # mark as spawned
 
-	# Copy the full transform (position, rotation, scale)
-	ice_instance.global_transform = player_transform
-	get_tree().current_scene.add_child(ice_instance)
+			# Get player transform BEFORE teleport
+			var player_transform := ice_spawn.global_transform
+			
+			# --- Spawn ice block depending on crouch state ---
+			var ice_instance: Node3D
+			if is_crouching:
+				ice_instance = ice_cube_scene.instantiate()
+			else:
+				ice_instance = ice_rect_scene.instantiate()
+
+			# Copy the full transform (position, rotation, scale)
+			ice_instance.global_transform = player_transform
+			get_tree().current_scene.add_child(ice_instance)
+			await get_tree().create_timer(0.01).timeout
 
 	# Teleport player to spawn position (translation only)
-	var new_transform := player_transform
+	var new_transform := global_transform
 	new_transform.origin = spawn.global_transform.origin
 	global_transform = new_transform
 
 	velocity = Vector3.ZERO
 	print("Respawned at:", spawn.global_transform.origin)
+
+	# Reset the flag for next respawn
+	ice_spawned = false
+
+func _get_colliding_ice_block() -> Node3D:
+	if not pickup.is_enabled():
+		return null
+
+	if pickup.is_colliding():
+		var collider := pickup.get_collider() as Node3D
+		if collider and collider.is_in_group("iceblock"):
+			return collider
+
+	return null
+
+func _melt_ice_block(ice_block: Node3D, delta: float) -> void:
+	if not ice_block.has_meta("melt_timer"):
+		ice_block.set_meta("melt_timer", 0.0)
+
+	var melt_timer: float = ice_block.get_meta("melt_timer") + delta
+	ice_block.set_meta("melt_timer", melt_timer)
+
+	var scale_factor = clamp(1.0 - melt_timer / MELT_TIME, 0.0, 1.0)
+	ice_block.scale = Vector3.ONE * scale_factor
+
+	if melt_timer >= MELT_TIME:
+		ice_block.queue_free()

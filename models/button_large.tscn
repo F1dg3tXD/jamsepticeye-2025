@@ -108,6 +108,7 @@ animation = &"Released"
 advance_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_oxqkf"]
+switch_mode = 1
 advance_mode = 2
 advance_condition = &"isPressed"
 

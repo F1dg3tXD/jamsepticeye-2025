@@ -12,9 +12,10 @@ config_version=5
 
 config/name="Corpse Tools"
 config/description="Freeze Yourself"
-config/version="0.01a"
+config/version="0.01b"
 run/main_scene="res://UI_Test/scenes/opening/opening_with_logo.tscn"
 config/features=PackedStringArray("4.5")
+boot_splash/image="uid://ceykrghbg84rn"
 config/icon="uid://ceykrghbg84rn"
 config/windows_native_icon="res://corpse_tools_icon.ico"
 
@@ -38,6 +39,8 @@ enabled=PackedStringArray("res://addons/maaacks_menus_template/plugin.cfg")
 [global_group]
 
 player_pawn="The player"
+checkpoint=""
+iceblock=""
 
 [gui]
 

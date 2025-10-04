@@ -1,10 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://blstrvusmss87"]
+[gd_scene load_steps=9 format=3 uid="uid://blstrvusmss87"]
 
 [ext_resource type="Script" uid="uid://blf8n1iejc4qj" path="res://Globals/player_pawn.gd" id="1_j6vuq"]
 [ext_resource type="PackedScene" uid="uid://ckmmespdb8apn" path="res://models/player.tscn" id="1_w3tdh"]
 [ext_resource type="PackedScene" uid="uid://rahvohrxtbfr" path="res://models/iceRect.tscn" id="2_1dixm"]
 [ext_resource type="PackedScene" uid="uid://b6a8kh0nrt4tp" path="res://models/iceCube.tscn" id="3_kfe1x"]
 [ext_resource type="PackedScene" uid="uid://c3iofxi462mhv" path="res://UI_Test/scenes/pause_menu_controller.tscn" id="3_xb0lg"]
+[ext_resource type="PackedScene" uid="uid://djfv422o6fc2w" path="res://models/freeze_gun.tscn" id="5_kfe1x"]
+[ext_resource type="Texture2D" uid="uid://nrlpag336p03" path="res://addons/kenney_crosshair-pack/PNG/Outline Retina/crosshair027.png" id="7_lygmr"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_j6vuq"]
 
@@ -12,8 +14,7 @@
 script = ExtResource("1_j6vuq")
 ice_rect_scene = ExtResource("2_1dixm")
 ice_cube_scene = ExtResource("3_kfe1x")
-hold_distance = -1.5
-hold_strength = 8.0
+hold_distance = -2.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
@@ -23,25 +24,25 @@ shape = SubResource("CapsuleShape3D_j6vuq")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25, 0)
 
 [node name="Skeleton3D" parent="player/Armature" index="0"]
-bones/1/rotation = Quaternion(-0.015358239, 0.05836811, 0.029080668, 0.9977533)
-bones/2/rotation = Quaternion(0.022992717, 0.06870159, 0.0032808864, 0.9973669)
-bones/3/rotation = Quaternion(0.023701541, 0.06872911, 0.0017354426, 0.99735224)
-bones/4/rotation = Quaternion(0.14100312, 0.06442616, -0.029613147, 0.9874667)
-bones/5/rotation = Quaternion(0.0058958107, 0.17383222, 0.069137186, 0.9823277)
-bones/7/rotation = Quaternion(-0.5511233, -0.45825362, 0.58452684, -0.38025674)
-bones/8/rotation = Quaternion(0.19590591, -0.182974, 0.4301057, 0.8620618)
-bones/9/rotation = Quaternion(-0.0774946, 0.0073020677, 0.65072703, 0.7553117)
-bones/10/rotation = Quaternion(-0.13394715, -0.4631437, -0.36813122, 0.79500663)
-bones/31/rotation = Quaternion(0.44389376, -0.41616836, 0.55873203, 0.56354314)
-bones/32/rotation = Quaternion(0.3409412, 0.06407756, -0.7791392, 0.52210665)
-bones/33/rotation = Quaternion(-0.023340212, -0.00897989, -0.24699475, 0.96869403)
-bones/34/rotation = Quaternion(-0.17496175, 0.44611257, 0.20204009, 0.85413814)
-bones/55/rotation = Quaternion(0.12424677, 0.24260287, 0.9484999, -0.16141468)
-bones/56/rotation = Quaternion(-0.24840747, -0.08672044, 0.026678318, 0.9643971)
-bones/57/rotation = Quaternion(0.4510629, -0.07972094, -0.025089867, 0.8885705)
-bones/60/rotation = Quaternion(-0.12706369, 0.10619035, 0.9843352, 0.06052008)
-bones/61/rotation = Quaternion(-0.20181759, -0.074231595, -0.00502649, 0.97659314)
-bones/62/rotation = Quaternion(0.53328943, 0.12864216, 0.049076583, 0.8346527)
+bones/1/rotation = Quaternion(-0.014218222, 0.05730719, 0.029898671, 0.99780756)
+bones/2/rotation = Quaternion(0.022982595, 0.06816424, 0.0026221487, 0.997406)
+bones/3/rotation = Quaternion(0.023598323, 0.06828083, 0.00095195137, 0.9973865)
+bones/4/rotation = Quaternion(0.138511, 0.064386584, -0.029127551, 0.98783636)
+bones/5/rotation = Quaternion(0.0057577733, 0.17384145, 0.07176669, 0.9821383)
+bones/7/rotation = Quaternion(-0.5544981, -0.45507562, 0.58979607, -0.37091607)
+bones/8/rotation = Quaternion(0.19758822, -0.18946844, 0.4339669, 0.85833174)
+bones/9/rotation = Quaternion(-0.07792885, 0.007271115, 0.65437293, 0.7521106)
+bones/10/rotation = Quaternion(-0.12050935, -0.44767064, -0.39323798, 0.7939978)
+bones/31/rotation = Quaternion(0.4481831, -0.41317508, 0.5589506, 0.56213206)
+bones/32/rotation = Quaternion(0.35217974, 0.06506481, -0.77282864, 0.5239008)
+bones/33/rotation = Quaternion(-0.024324857, -0.008954474, -0.25741264, 0.9659539)
+bones/34/rotation = Quaternion(-0.1717089, 0.4403977, 0.22199751, 0.85280895)
+bones/55/rotation = Quaternion(0.12588911, 0.25288013, 0.94449574, -0.16772413)
+bones/56/rotation = Quaternion(-0.26368573, -0.08216842, 0.028315216, 0.96068543)
+bones/57/rotation = Quaternion(0.4548926, -0.081641056, -0.027846893, 0.8863589)
+bones/60/rotation = Quaternion(-0.12539262, 0.12000859, 0.9831298, 0.057710774)
+bones/61/rotation = Quaternion(-0.2278055, -0.074579425, -0.0015355196, 0.9708451)
+bones/62/rotation = Quaternion(0.5444943, 0.12729636, 0.045622297, 0.8277924)
 
 [node name="GEO-body_male_stylized" parent="player/Armature/Skeleton3D" index="0"]
 cast_shadow = 3
@@ -67,6 +68,43 @@ transform = Transform3D(-0.18908174, -0.079103954, 0.97877, 0.97046894, 0.136995
 [node name="RayCast3D" type="RayCast3D" parent="Head"]
 target_position = Vector3(0, 0, 5)
 
+[node name="Hand" type="Node3D" parent="Head"]
+transform = Transform3D(0.9956308, 0.011553823, 0.09265984, -0.01150411, 0.99993324, -0.0010706468, -0.09266602, 0, 0.99569726, -0.40245104, -0.26922417, 0.52492017)
+
+[node name="FreezeGun" parent="Head/Hand" instance=ExtResource("5_kfe1x")]
+
+[node name="freeze gun" parent="Head/Hand/FreezeGun" index="0"]
+transform = Transform3D(-1, 1.5655727e-08, -1.4585075e-07, -2.2626681e-08, 0.9659257, 0.25881907, 1.44933e-07, 0.25881904, -0.9659258, 0, 0, 0.31489235)
+
 [node name="PauseMenuController" parent="." instance=ExtResource("3_xb0lg")]
 
+[node name="IceSpawn" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.067792, 0)
+
+[node name="Crosshair" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="TextureRect" type="TextureRect" parent="Crosshair"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -72.0
+offset_top = -72.0
+offset_right = 72.0
+offset_bottom = 72.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_lygmr")
+
 [editable path="player"]
+[editable path="Head/Hand/FreezeGun"]

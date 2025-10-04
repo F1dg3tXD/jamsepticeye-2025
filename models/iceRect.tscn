@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://rahvohrxtbfr"]
+[gd_scene load_steps=6 format=3 uid="uid://rahvohrxtbfr"]
 
 [ext_resource type="Texture2D" uid="uid://roubvlahxgt" path="res://addons/kenney_prototype-textures/PNG/Purple/texture_05.png" id="1_2pv4l"]
+[ext_resource type="PackedScene" uid="uid://wvc18tggt1wq" path="res://models/ice_rect_mesh.tscn" id="2_4vt5y"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4vt5y"]
 albedo_texture = ExtResource("1_2pv4l")
@@ -12,17 +13,19 @@ uv1_triplanar = true
 [sub_resource type="BoxShape3D" id="BoxShape3D_msudj"]
 size = Vector3(1, 2, 1)
 
-[node name="iceCube" type="Node3D"]
+[node name="iceRect" type="Node3D"]
 
 [node name="RigidBody3D" type="RigidBody3D" parent="."]
 
 [node name="CSGBox3D" type="CSGBox3D" parent="RigidBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1033415, 0)
+visible = false
 material_override = SubResource("StandardMaterial3D_4vt5y")
 use_collision = true
 size = Vector3(1, 2, 1)
 material = SubResource("StandardMaterial3D_y1q04")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("BoxShape3D_msudj")
+
+[node name="ice_rect" parent="RigidBody3D" groups=["iceblock"] instance=ExtResource("2_4vt5y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)

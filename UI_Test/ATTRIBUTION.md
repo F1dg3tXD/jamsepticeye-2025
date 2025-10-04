@@ -6,6 +6,23 @@
 [F1dg3t](https://f1dg3t.itch.io)  
 
 ## Assets
+### Music
+
+#### - "Portal 2 Mysterious Space Background Music (No Copyright)"  
+Author: [Gravity Sound](https://www.youtube.com/@GravitySound)   
+Source: [X_h0ESSNe8E](https://www.youtube.com/watch?v=X_h0ESSNe8E)
+License: [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/)
+
+#### - "Portal Mysterious Space Background Music (No Copyright)"  
+Author: [Gravity Sound](https://www.youtube.com/@GravitySound)   
+Source: [hziFxpjRbfJc](https://www.youtube.com/watch?v=ziFxpjRbfJc)
+License: [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/)
+
+#### - "Point - Mysterious Suspense Background Music No Copyright"  
+Author: [Gravity Sound](https://www.youtube.com/@GravitySound)   
+Source: [4vHVCmkrQN0](https://www.youtube.com/watch?v=ziFxpjRbfJc)
+License: [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/)
+
 ### Textures
 #### Level Editing
 Author: [Kenny](https://kenney.nl)  

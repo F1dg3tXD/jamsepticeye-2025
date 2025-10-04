@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bakwu7t6wxhmo"
+path="res://.godot/imported/＂Portal＂ Mysterious Space Background Music No Copyright [ziFxpjRbfJc].mp3-29a4f1b0b2955c9d03d311c6cfaa46c4.mp3str"
+
+[deps]
+
+source_file="res://sounds/music/＂Portal＂ Mysterious Space Background Music No Copyright [ziFxpjRbfJc].mp3"
+dest_files=["res://.godot/imported/＂Portal＂ Mysterious Space Background Music No Copyright [ziFxpjRbfJc].mp3-29a4f1b0b2955c9d03d311c6cfaa46c4.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

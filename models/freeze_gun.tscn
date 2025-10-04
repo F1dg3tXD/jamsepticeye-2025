@@ -1,0 +1,188 @@
+[gd_scene load_steps=14 format=3 uid="uid://djfv422o6fc2w"]
+
+[ext_resource type="PackedScene" uid="uid://bkpngcwosde0f" path="res://models/props/FreezeGun/FreezeGun.glb" id="1_0dhnf"]
+[ext_resource type="Texture2D" uid="uid://dtq5sso7gogk4" path="res://models/props/FreezeGun/FreezeGun_FreezeGun_D.png" id="2_jcty0"]
+[ext_resource type="Texture2D" uid="uid://bn01rvojwrwfs" path="res://models/props/FreezeGun/FreezeGun_FreezeGun_R.png" id="3_xjmyw"]
+[ext_resource type="Material" uid="uid://bk4qag1x33jn3" path="res://materials/ice_mat.tres" id="4_ima16"]
+[ext_resource type="Material" uid="uid://bqhovn4afd53f" path="res://materials/fire.tres" id="4_xjmyw"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ima16"]
+albedo_texture = ExtResource("2_jcty0")
+metallic = 1.0
+metallic_specular = 1.0
+metallic_texture = ExtResource("3_xjmyw")
+roughness_texture = ExtResource("3_xjmyw")
+
+[sub_resource type="SphereMesh" id="SphereMesh_oylwn"]
+material = ExtResource("4_ima16")
+radius = 0.1
+height = 0.2
+
+[sub_resource type="SphereMesh" id="SphereMesh_xjmyw"]
+material = ExtResource("4_xjmyw")
+radius = 0.1
+height = 0.2
+
+[sub_resource type="Animation" id="Animation_jcty0"]
+resource_name = "Freeze"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("freeze gun:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.53333336),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0.31489235)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("freeze gun:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.53333336, 0.6666667, 0.81),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-0.26179942, -3.1415925, -2.3424864e-08), Vector3(-0.41750026, -3.1415925, -4.9040395e-08), Vector3(-0.26179942, -3.1415925, -2.3424864e-08)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("freeze gun/CPUParticles3D:emitting")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.44, 0.54, 0.92),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+
+[sub_resource type="Animation" id="Animation_xjmyw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("freeze gun:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0.31489235)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("freeze gun:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.26179942, -3.1415925, -2.3424864e-08)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("freeze gun/CPUParticles3D:emitting")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_ima16"]
+resource_name = "Grab"
+loop_mode = 1
+
+[sub_resource type="Animation" id="Animation_oylwn"]
+resource_name = "Idle"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("freeze gun/CPUParticles3D:emitting")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("freeze gun:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, -0.015411526, -0.00034165382), Vector3(0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("freeze gun:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0.0828925, -0.00773962, -0.09320738), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ima16"]
+_data = {
+&"Freeze": SubResource("Animation_jcty0"),
+&"Grab": SubResource("Animation_ima16"),
+&"Idle": SubResource("Animation_oylwn"),
+&"RESET": SubResource("Animation_xjmyw")
+}
+
+[node name="FreezeGun" instance=ExtResource("1_0dhnf")]
+
+[node name="freeze gun" parent="." index="0"]
+transform = Transform3D(-1, 1.5655727e-08, -1.4585075e-07, -2.2626681e-08, 0.96592575, 0.25881907, 1.44933e-07, 0.25881904, -0.9659258, 0, 0, 0.31489235)
+surface_material_override/0 = SubResource("StandardMaterial3D_ima16")
+
+[node name="CPUParticles3D" type="CPUParticles3D" parent="freeze gun" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.04190682, 0.25667542)
+mesh = SubResource("SphereMesh_oylwn")
+emission_shape = 1
+emission_sphere_radius = 0.1
+direction = Vector3(0, 0, 1)
+spread = 22.11
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 1.0
+initial_velocity_max = 1.0
+
+[node name="CPUParticles3D2" type="CPUParticles3D" parent="freeze gun" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.04190682, 0.25667542)
+emitting = false
+mesh = SubResource("SphereMesh_xjmyw")
+emission_shape = 1
+emission_sphere_radius = 0.1
+direction = Vector3(0, 0, 1)
+spread = 22.11
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 1.0
+initial_velocity_max = 1.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="1"]
+libraries = {
+&"": SubResource("AnimationLibrary_ima16")
+}

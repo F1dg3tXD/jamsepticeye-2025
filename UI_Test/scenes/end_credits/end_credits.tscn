@@ -38,11 +38,29 @@ scroll_vertical = 0
 text = "[center][font_size=48]Collaborators[/font_size]
 
 [font_size=32]Lead Developer   [/font_size]
+[img=80]res:///UI_Test/assets/F1dg3t_Logo_Simple@4x.png[/img]
 [url=https://f1dg3t.itch.io]F1dg3t[/url]  
 
-[font_size=48]Sourced[/font_size]
-[font_size=32]Asset Type[/font_size]
-[font_size=24]Use Case[/font_size]
+[font_size=48]Assets[/font_size]
+[font_size=32]Music[/font_size]
+
+[font_size=24]- \"Portal 2 Mysterious Space Background Music (No Copyright)\"  [/font_size]
+Author: [url=https://www.youtube.com/@GravitySound]Gravity Sound[/url]   
+Source: [url=https://www.youtube.com/watch?v=X_h0ESSNe8E]X_h0ESSNe8E[/url]
+License: [url=https://creativecommons.org/publicdomain/zero/1.0/]CC0 1.0 Universal[/url]
+
+[font_size=24]- \"Portal Mysterious Space Background Music (No Copyright)\"  [/font_size]
+Author: [url=https://www.youtube.com/@GravitySound]Gravity Sound[/url]   
+Source: [url=https://www.youtube.com/watch?v=ziFxpjRbfJc]hziFxpjRbfJc[/url]
+License: [url=https://creativecommons.org/publicdomain/zero/1.0/]CC0 1.0 Universal[/url]
+
+[font_size=24]- \"Point - Mysterious Suspense Background Music No Copyright\"  [/font_size]
+Author: [url=https://www.youtube.com/@GravitySound]Gravity Sound[/url]   
+Source: [url=https://www.youtube.com/watch?v=ziFxpjRbfJc]4vHVCmkrQN0[/url]
+License: [url=https://creativecommons.org/publicdomain/zero/1.0/]CC0 1.0 Universal[/url]
+
+[font_size=32]Textures[/font_size]
+[font_size=24]Level Editing[/font_size]
 Author: [url=https://kenney.nl]Kenny[/url]  
 Source: [url=https://kenney.nl/assets/prototype-textures]Domain : webpage.html[/url]  
 License: [url=https://creativecommons.org/publicdomain/zero/1.0/]CC0[/url]
