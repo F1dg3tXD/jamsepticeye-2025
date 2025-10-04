@@ -3,6 +3,16 @@ extends CharacterBody3D
 @onready var collision_shape_3d: CollisionShape3D = $CollisionShape3D
 @onready var animation_tree: AnimationTree = $player/AnimationTree
 @onready var head: Node3D = $Head
+@export var ice_rect_scene: PackedScene
+@export var ice_cube_scene: PackedScene
+@onready var pickup: RayCast3D = $Head/RayCast3D
+
+var held_object: RigidBody3D = null
+
+@export var hold_distance: float = 2.0
+@export var hold_strength: float = 10.0
+
+
 var current_rwc: float = 0.0
 var current_idw: float = 1.0
 
@@ -34,10 +44,24 @@ func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
 		yaw += event.relative.x * mouse_sensitivity
 		pitch += event.relative.y * mouse_sensitivity
-		pitch = clamp(pitch, -1.2, 1.2) # clamp vertical look
+		pitch = clamp(pitch, -1.5, 1.5) # clamp vertical look
 
 		rotation.y = -yaw
 		head.rotation.x = pitch
+	
+	if Input.is_action_just_pressed("ice"):
+		respawn()
+		
+	if Input.is_action_just_pressed("use"):
+		if held_object:
+			# Release object
+			held_object = null
+		else:
+			# Try to pick up
+			if pickup.is_colliding():
+				var collider = pickup.get_collider()
+				if collider is RigidBody3D:
+					held_object = collider
 
 func _process(delta: float) -> void:
 	# --- CONTROLLER LOOK ---
@@ -52,6 +76,12 @@ func _process(delta: float) -> void:
 
 		rotation.y = yaw
 		head.rotation.x = pitch
+	
+	# If holding something, keep moving it to the hold position
+	if held_object:
+		var target_pos = pickup.global_transform.origin + pickup.global_transform.basis.z * -hold_distance
+		var dir = target_pos - held_object.global_transform.origin
+		held_object.linear_velocity = dir * hold_strength
 
 func _physics_process(delta: float) -> void:
 	# --- Gravity ---
@@ -137,3 +167,37 @@ func update_animation(delta: float, input_dir: Vector2) -> void:
 	# Apply to AnimationTree
 	animation_tree.set("parameters/RWC/blend_amount", current_rwc)
 	animation_tree.set("parameters/Idw/blend_amount", current_idw)
+
+func respawn() -> void:
+	var spawn: Node3D = null
+
+	if Game.last_checkpoint:
+		spawn = Game.last_checkpoint
+	else:
+		spawn = get_node_or_null(Game.default_spawn)
+
+	if not spawn:
+		push_error("No valid spawn point found!")
+		return
+
+	# Get player transform BEFORE teleport
+	var player_transform := global_transform
+
+	# --- Spawn ice block depending on crouch state ---
+	var ice_instance: Node3D
+	if is_crouching:
+		ice_instance = ice_cube_scene.instantiate()
+	else:
+		ice_instance = ice_rect_scene.instantiate()
+
+	# Copy the full transform (position, rotation, scale)
+	ice_instance.global_transform = player_transform
+	get_tree().current_scene.add_child(ice_instance)
+
+	# Teleport player to spawn position (translation only)
+	var new_transform := player_transform
+	new_transform.origin = spawn.global_transform.origin
+	global_transform = new_transform
+
+	velocity = Vector3.ZERO
+	print("Respawned at:", spawn.global_transform.origin)

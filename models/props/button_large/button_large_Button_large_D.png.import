@@ -2,18 +2,21 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://jbmo7ukdgt7d"
-path.s3tc="res://.godot/imported/texture_05.png-a7d3b795e8c368f32b4934c44e78e2c2.s3tc.ctex"
-path.etc2="res://.godot/imported/texture_05.png-a7d3b795e8c368f32b4934c44e78e2c2.etc2.ctex"
+uid="uid://dfhpyn8qiuxov"
+path.s3tc="res://.godot/imported/button_large_Button_large_D.png-9e5fd189ab467917dadb76218b4c2e5d.s3tc.ctex"
+path.etc2="res://.godot/imported/button_large_Button_large_D.png-9e5fd189ab467917dadb76218b4c2e5d.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
+generator_parameters={
+"md5": "7f0e04544b8db19cb2be32d7864d095c"
+}
 
 [deps]
 
-source_file="res://addons/kenney_prototype-textures/PNG/Red/texture_05.png"
-dest_files=["res://.godot/imported/texture_05.png-a7d3b795e8c368f32b4934c44e78e2c2.s3tc.ctex", "res://.godot/imported/texture_05.png-a7d3b795e8c368f32b4934c44e78e2c2.etc2.ctex"]
+source_file="res://models/props/button_large/button_large_Button_large_D.png"
+dest_files=["res://.godot/imported/button_large_Button_large_D.png-9e5fd189ab467917dadb76218b4c2e5d.s3tc.ctex", "res://.godot/imported/button_large_Button_large_D.png-9e5fd189ab467917dadb76218b4c2e5d.etc2.ctex"]
 
 [params]
 

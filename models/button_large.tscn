@@ -1,0 +1,162 @@
+[gd_scene load_steps=19 format=3 uid="uid://ctt4gweqtowtk"]
+
+[ext_resource type="PackedScene" uid="uid://cdigbqh3450eu" path="res://models/props/button_large/button_large.glb" id="1_281ha"]
+[ext_resource type="Script" uid="uid://dwl5xixpuxfb2" path="res://models/button_large.gd" id="2_5lf25"]
+[ext_resource type="Texture2D" uid="uid://dfhpyn8qiuxov" path="res://models/props/button_large/button_large_Button_large_D.png" id="3_oxqkf"]
+[ext_resource type="Texture2D" uid="uid://ewlo3ppw0n78" path="res://models/props/button_large/button_large_Button_large_E.png" id="4_257a8"]
+[ext_resource type="Texture2D" uid="uid://d4q8ybwkbrr6" path="res://models/props/button_large/Button_large_R.png" id="5_fejpa"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cw0yw"]
+albedo_texture = ExtResource("3_oxqkf")
+roughness = 0.0
+roughness_texture = ExtResource("5_fejpa")
+emission_enabled = true
+emission_energy_multiplier = 0.0
+emission_texture = ExtResource("4_257a8")
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_5lf25"]
+height = 0.13619995
+radius = 0.9042969
+
+[sub_resource type="Animation" id="Animation_5lf25"]
+resource_name = "Pressed"
+tracks/0/type = "position_3d"
+tracks/0/imported = true
+tracks/0/enabled = true
+tracks/0/path = NodePath("Armature/Skeleton3D:button")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 1, 0, 0.033333335, 1, 0, 1, 0, 0.06666667, 1, 0, 0.99841416, 0, 0.1, 1, 0, 0.99380594, 0, 0.13333334, 1, 0, 0.9863992, 0, 0.16666667, 1, 0, 0.9764177, 0, 0.2, 1, 0, 0.9640856, 0, 0.23333333, 1, 0, 0.9496265, 0, 0.26666668, 1, 0, 0.93326443, 0, 0.3, 1, 0, 0.91522324, 0, 0.33333334, 1, 0, 0.8957268, 0, 0.36666667, 1, 0, 0.87499905, 0, 0.4, 1, 0, 0.8532638, 0, 0.43333334, 1, 0, 0.830745, 0, 0.46666667, 1, 0, 0.8076664, 0, 0.56666666, 1, 0, 0.7373114, 0, 0.6, 1, 0, 0.7142329, 0, 0.6333333, 1, 0, 0.69171405, 0, 0.6666667, 1, 0, 0.6699788, 0, 0.7, 1, 0, 0.649251, 0, 0.73333335, 1, 0, 0.62975466, 0, 0.76666665, 1, 0, 0.6117135, 0, 0.8, 1, 0, 0.59535146, 0, 0.8333333, 1, 0, 0.5808923, 0, 0.8666667, 1, 0, 0.5685601, 0, 0.9, 1, 0, 0.5585788, 0, 0.93333334, 1, 0, 0.55117196, 0, 0.96666664, 1, 0, 0.54656374, 0, 1, 1, 0, 0.5449779, 0)
+tracks/1/type = "scale_3d"
+tracks/1/imported = true
+tracks/1/enabled = true
+tracks/1/path = NodePath("Armature/Skeleton3D:button")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 1, 1, 1, 0.033333335, 1, 1, 1, 1, 0.06666667, 1, 1, 0.9979691, 1, 0.1, 1, 1, 0.9920676, 1, 0.13333334, 1, 1, 0.98258203, 1, 0.16666667, 1, 1, 0.9697994, 1, 0.2, 1, 1, 0.95400614, 1, 0.23333333, 1, 1, 0.9354892, 1, 0.26666668, 1, 1, 0.9145351, 1, 0.3, 1, 1, 0.8914306, 1, 0.33333334, 1, 1, 0.8664625, 1, 0.36666667, 1, 1, 0.83991754, 1, 0.4, 1, 1, 0.8120823, 1, 0.43333334, 1, 1, 0.78324354, 1, 0.46666667, 1, 1, 0.753688, 1, 0.56666666, 1, 1, 0.6635878, 1, 0.6, 1, 1, 0.63403237, 1, 0.6333333, 1, 1, 0.6051936, 1, 0.6666667, 1, 1, 0.57735837, 1, 0.7, 1, 1, 0.5508133, 1, 0.73333335, 1, 1, 0.5258453, 1, 0.76666665, 1, 1, 0.5027408, 1, 0.8, 1, 1, 0.48178673, 1, 0.8333333, 1, 1, 0.46326965, 1, 0.8666667, 1, 1, 0.4474765, 1, 0.9, 1, 1, 0.4346938, 1, 0.93333334, 1, 1, 0.42520833, 1, 0.96666664, 1, 1, 0.41930676, 1, 1, 1, 1, 0.4172759, 1)
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Armature/Skeleton3D/button_large:surface_material_override/0:emission_energy_multiplier")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 16.0]
+}
+
+[sub_resource type="Animation" id="Animation_mkwvs"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Armature/Skeleton3D/button_large:surface_material_override/0:emission_energy_multiplier")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_lye6t"]
+resource_name = "Released"
+tracks/0/type = "position_3d"
+tracks/0/imported = true
+tracks/0/enabled = true
+tracks/0/path = NodePath("Armature/Skeleton3D:button")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0.5449779, 0, 0.033333335, 1, 0, 0.5449779, 0, 0.06666667, 1, 0, 0.5466776, 0, 0.1, 1, 0, 0.5516109, 0, 0.13333334, 1, 0, 0.559529, 0, 0.16666667, 1, 0, 0.5701832, 0, 0.2, 1, 0, 0.5833248, 0, 0.23333333, 1, 0, 0.598705, 0, 0.26666668, 1, 0, 0.6160751, 0, 0.3, 1, 0, 0.6351864, 0, 0.33333334, 1, 0, 0.6557901, 0, 0.36666667, 1, 0, 0.67763746, 0, 0.4, 1, 0, 0.70047975, 0, 0.43333334, 1, 0, 0.7240682, 0, 0.46666667, 1, 0, 0.7481542, 0, 0.53333336, 1, 0, 0.7968237, 0, 0.56666666, 1, 0, 0.8209096, 0, 0.6, 1, 0, 0.84449816, 0, 0.6333333, 1, 0, 0.86734045, 0, 0.6666667, 1, 0, 0.8891878, 0, 0.7, 1, 0, 0.9097916, 0, 0.73333335, 1, 0, 0.92890275, 0, 0.76666665, 1, 0, 0.94627285, 0, 0.8, 1, 0, 0.9616532, 0, 0.8333333, 1, 0, 0.9747947, 0, 0.8666667, 1, 0, 0.98544896, 0, 0.9, 1, 0, 0.9933671, 0, 0.93333334, 1, 0, 0.99830025, 0, 0.96666664, 1, 0, 1, 0, 1, 1, 0, 1, 0)
+tracks/1/type = "scale_3d"
+tracks/1/imported = true
+tracks/1/enabled = true
+tracks/1/path = NodePath("Armature/Skeleton3D:button")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 1, 0.4172759, 1, 0.033333335, 1, 1, 0.4172759, 1, 0.06666667, 1, 1, 0.41945264, 1, 0.1, 1, 1, 0.42577043, 1, 0.13333334, 1, 1, 0.43591076, 1, 0.16666667, 1, 1, 0.4495551, 1, 0.2, 1, 1, 0.46638483, 1, 0.23333333, 1, 1, 0.4860815, 1, 0.26666668, 1, 1, 0.50832653, 1, 0.3, 1, 1, 0.5328014, 1, 0.33333334, 1, 1, 0.5591875, 1, 0.36666667, 1, 1, 0.58716625, 1, 0.4, 1, 1, 0.6164193, 1, 0.43333334, 1, 1, 0.64662796, 1, 0.46666667, 1, 1, 0.67747366, 1, 0.53333336, 1, 1, 0.7398022, 1, 0.56666666, 1, 1, 0.77064794, 1, 0.6, 1, 1, 0.8008565, 1, 0.6333333, 1, 1, 0.8301096, 1, 0.6666667, 1, 1, 0.8580884, 1, 0.7, 1, 1, 0.8844745, 1, 0.73333335, 1, 1, 0.9089494, 1, 0.76666665, 1, 1, 0.93119437, 1, 0.8, 1, 1, 0.950891, 1, 0.8333333, 1, 1, 0.96772075, 1, 0.8666667, 1, 1, 0.98136514, 1, 0.9, 1, 1, 0.9915055, 1, 0.93333334, 1, 1, 0.99782336, 1, 0.96666664, 1, 1, 1, 1, 1, 1, 1, 1, 1)
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Armature/Skeleton3D/button_large:surface_material_override/0:emission_energy_multiplier")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.03333336, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [16.0, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mkwvs"]
+_data = {
+&"Pressed": SubResource("Animation_5lf25"),
+&"RESET": SubResource("Animation_mkwvs"),
+&"Released": SubResource("Animation_lye6t")
+}
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_5lf25"]
+animation = &"Pressed"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_lye6t"]
+animation = &"Released"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_mkwvs"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_oxqkf"]
+advance_mode = 2
+advance_condition = &"isPressed"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_257a8"]
+advance_mode = 2
+advance_condition = &"!isPressed"
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_fejpa"]
+states/Pressed/node = SubResource("AnimationNodeAnimation_5lf25")
+states/Pressed/position = Vector2(571, 107)
+states/Released/node = SubResource("AnimationNodeAnimation_lye6t")
+states/Released/position = Vector2(394, 107)
+transitions = ["Start", "Released", SubResource("AnimationNodeStateMachineTransition_mkwvs"), "Released", "Pressed", SubResource("AnimationNodeStateMachineTransition_oxqkf"), "Pressed", "Released", SubResource("AnimationNodeStateMachineTransition_257a8")]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_281ha"]
+height = 0.4489746
+radius = 0.80615234
+
+[node name="button_large" instance=ExtResource("1_281ha")]
+script = ExtResource("2_5lf25")
+
+[node name="button_large" parent="Armature/Skeleton3D" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_cw0yw")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Armature/Skeleton3D/button_large" index="0"]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Armature/Skeleton3D/button_large/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.063339196, 0)
+shape = SubResource("CylinderShape3D_5lf25")
+
+[node name="AnimationPlayer" parent="." index="1"]
+libraries = {
+&"": SubResource("AnimationLibrary_mkwvs")
+}
+
+[node name="AnimationTree" type="AnimationTree" parent="." index="2"]
+tree_root = SubResource("AnimationNodeStateMachine_fejpa")
+anim_player = NodePath("../AnimationPlayer")
+parameters/conditions/!isPressed = false
+parameters/conditions/isPressed = false
+
+[node name="Area3D" type="Area3D" parent="." index="3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.22619629, 0)
+shape = SubResource("CylinderShape3D_281ha")
+
+[connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_area_entered"]
+[connection signal="area_exited" from="Area3D" to="." method="_on_area_3d_area_exited"]
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]

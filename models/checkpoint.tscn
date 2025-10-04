@@ -1,0 +1,43 @@
+[gd_scene load_steps=7 format=3 uid="uid://dk4qxqjes3n65"]
+
+[ext_resource type="Script" uid="uid://r8iibq32wipj" path="res://models/checkpoint.gd" id="1_sw8yd"]
+[ext_resource type="Texture2D" uid="uid://dyymorqbguntr" path="res://addons/kenney_prototype-textures/PNG/Red/texture_13.png" id="1_t8377"]
+[ext_resource type="Texture2D" uid="uid://gx8rdja4q7xk" path="res://addons/kenney_prototype-textures/PNG/Red/texture_09.png" id="2_t8377"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u13du"]
+albedo_texture = ExtResource("1_t8377")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_syw86"]
+albedo_texture = ExtResource("2_t8377")
+uv1_triplanar = true
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_t8377"]
+radius = 1.7797852
+
+[node name="Checkpoint" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
+script = ExtResource("1_sw8yd")
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.2847736e-08, 0.29392195)
+use_collision = true
+
+[node name="CSGTorus3D" type="CSGTorus3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, -1.9434832e-08, -1, 0, 0.44461715, -4.371139e-08, 0, 9.168869e-09, -0.2097593)
+material_override = SubResource("StandardMaterial3D_u13du")
+inner_radius = 1.185952
+outer_radius = 1.777521
+sides = 16
+material = SubResource("StandardMaterial3D_syw86")
+
+[node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.7748475e-09, -0.2007451)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, -5.601589e-08, 1.2814941)
+shape = SubResource("CylinderShape3D_t8377")
+
+[node name="checkpoint_spawn" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5.2614748e-08, 1.2036852)
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
