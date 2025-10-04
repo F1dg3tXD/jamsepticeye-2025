@@ -6,11 +6,7 @@
 [node name="ScrollingCredits" instance=ExtResource("1_22xib")]
 script = ExtResource("2_i73bu")
 
-[node name="HeaderSpace" parent="ScrollContainer/VBoxContainer" index="0"]
-custom_minimum_size = Vector2(0, 648)
-
 [node name="CreditsLabel" parent="ScrollContainer/VBoxContainer" index="1"]
-custom_minimum_size = Vector2(1152, 0)
 text = "[center][font_size=48]Collaborators[/font_size]
 
 [font_size=32]Lead Developer   [/font_size]
@@ -19,9 +15,9 @@ text = "[center][font_size=48]Collaborators[/font_size]
 [font_size=48]Sourced[/font_size]
 [font_size=32]Asset Type[/font_size]
 [font_size=24]Use Case[/font_size]
-Author: [url=]Name[/url]  
-Source: [url=]Domain : webpage.html[/url]  
-License: [url=]License[/url]
+Author: [url=https://kenney.nl]Kenny[/url]  
+Source: [url=https://kenney.nl/assets/prototype-textures]Domain : webpage.html[/url]  
+License: [url=https://creativecommons.org/publicdomain/zero/1.0/]CC0[/url]
 
 [font_size=24]Godot Engine Logo[/font_size]
 Author: Andrea Calabró  
@@ -48,6 +44,3 @@ Source: [url=https://git-scm.com/downloads]git-scm.com[/url]
 License: [url=https://opensource.org/licenses/GPL-2.0]GNU General Public License version 2[/url]
 [/center]"
 attribution_file_path = "res://UI_Test/ATTRIBUTION.md"
-
-[node name="FooterSpace" parent="ScrollContainer/VBoxContainer" index="2"]
-custom_minimum_size = Vector2(0, 648)

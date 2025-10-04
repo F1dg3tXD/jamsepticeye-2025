@@ -2,11 +2,12 @@
 ## Collaborators
 
 ### Lead Developer   
+![F1dg3t Logo](/UI_Test/assets/F1dg3t_Logo_Simple@4x.png)
 [F1dg3t](https://f1dg3t.itch.io)  
 
-## Sourced
-### Asset Type
-#### Use Case
+## Assets
+### Textures
+#### Level Editing
 Author: [Kenny](https://kenney.nl)  
 Source: [Domain : webpage.html](https://kenney.nl/assets/prototype-textures)  
 License: [CC0](https://creativecommons.org/publicdomain/zero/1.0/)

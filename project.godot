@@ -15,7 +15,8 @@ config/description="Freeze Yourself"
 config/version="0.01a"
 run/main_scene="res://UI_Test/scenes/opening/opening_with_logo.tscn"
 config/features=PackedStringArray("4.5")
-config/icon="uid://cof2eflcpfrso"
+config/icon="uid://ceykrghbg84rn"
+config/windows_native_icon="res://corpse_tools_icon.ico"
 
 [autoload]
 
