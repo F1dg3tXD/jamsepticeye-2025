@@ -17,6 +17,7 @@ run/main_scene="res://UI_Test/scenes/opening/opening_with_logo.tscn"
 config/features=PackedStringArray("4.5")
 boot_splash/image="uid://ceykrghbg84rn"
 config/icon="uid://ceykrghbg84rn"
+config/macos_native_icon="res://corpse_tools_icon.icns"
 config/windows_native_icon="res://corpse_tools_icon.ico"
 
 [autoload]
@@ -152,4 +153,6 @@ copy_path="res://UI_Test/"
 
 [rendering]
 
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
 textures/vram_compression/import_etc2_astc=true
