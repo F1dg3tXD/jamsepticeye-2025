@@ -116,6 +116,7 @@ func _process(delta: float) -> void:
 		held_object.linear_velocity = dir * hold_strength
 		gun_particles.emitting = true
 		crosshair.visible = true
+		#gun_animation_player.play("Grab")
 		
 	if Input.is_action_pressed("shoot"):
 		var ice_block = _get_colliding_ice_block()

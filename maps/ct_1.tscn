@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://cu0gx22qu2wlw"]
+[gd_scene load_steps=34 format=3 uid="uid://cu0gx22qu2wlw"]
 
 [ext_resource type="Material" uid="uid://chno48qqvah8f" path="res://materials/ct_floor.tres" id="1_7q6ti"]
 [ext_resource type="Material" uid="uid://be30lkumhxcb3" path="res://materials/ct_wall.tres" id="1_bxlid"]
@@ -6,12 +6,18 @@
 [ext_resource type="PackedScene" uid="uid://ctt4gweqtowtk" path="res://models/button_large.tscn" id="3_8ell3"]
 [ext_resource type="PackedScene" uid="uid://bayhjq7qqt3qp" path="res://models/door_hole.tscn" id="3_b4jjj"]
 [ext_resource type="PackedScene" uid="uid://t0upe6f63563" path="res://models/ceiling_light.tscn" id="3_j7g3k"]
+[ext_resource type="Texture2D" uid="uid://dfhpyn8qiuxov" path="res://models/props/button_large/button_large_Button_large_D.png" id="4_b4gqy"]
+[ext_resource type="Texture2D" uid="uid://ewlo3ppw0n78" path="res://models/props/button_large/button_large_Button_large_E.png" id="5_6issd"]
 [ext_resource type="AudioStream" uid="uid://df2utg4amxcln" path="res://sounds/vo/ct_1_end.mp3" id="5_bt4d6"]
 [ext_resource type="PackedScene" uid="uid://bg71h43w1v1qw" path="res://Globals/env.tscn" id="5_xisn3"]
 [ext_resource type="PackedScene" uid="uid://xsg4uqdy2r2k" path="res://models/door_enter.tscn" id="6_3jweh"]
+[ext_resource type="Texture2D" uid="uid://d4q8ybwkbrr6" path="res://models/props/button_large/Button_large_R.png" id="6_mmgcd"]
 [ext_resource type="PackedScene" uid="uid://dk4qxqjes3n65" path="res://models/checkpoint.tscn" id="9_lduqk"]
 [ext_resource type="PackedScene" uid="uid://blstrvusmss87" path="res://Globals/Player_pawn.tscn" id="11_wovge"]
+[ext_resource type="Texture2D" uid="uid://bqp3t5mtyk7w8" path="res://models/props/door_exit/Door_Exit_Button_large_D.png" id="12_fvoxu"]
 [ext_resource type="PackedScene" uid="uid://gt823aisyh37" path="res://models/door_exit.tscn" id="12_mr6v0"]
+[ext_resource type="Texture2D" uid="uid://b4bk0qtglwi6f" path="res://models/props/door_exit/Door_Exit_Button_large_E.png" id="13_p8ske"]
+[ext_resource type="Texture2D" uid="uid://kofqaw24hwj3" path="res://models/props/door_exit/Door_Exit_Button_large.png" id="14_04ye1"]
 [ext_resource type="PackedScene" uid="uid://ty7uuwhj4mbi" path="res://models/audioTrigger.tscn" id="15_a15vq"]
 [ext_resource type="AudioStream" uid="uid://d3oqxsgtx1s4r" path="res://sounds/vo/ct_1_intro.mp3" id="16_dt2hs"]
 [ext_resource type="PackedScene" uid="uid://d2m2ycuy73gxj" path="res://models/map_corner_end.tscn" id="16_uuc3c"]
@@ -19,11 +25,57 @@
 [ext_resource type="PackedScene" uid="uid://b5leb0ww40bd5" path="res://models/speaker.tscn" id="17_uuc3c"]
 [ext_resource type="AudioStream" uid="uid://c3cs207yfjmd1" path="res://sounds/music/Point - Mysterious Suspense Background Music No Copyright [4vHVCmkrQN0].mp3" id="18_bt4d6"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jkcle"]
+albedo_texture = ExtResource("4_b4gqy")
+roughness = 0.0
+roughness_texture = ExtResource("6_mmgcd")
+emission_enabled = true
+emission_energy_multiplier = 0.0
+emission_texture = ExtResource("5_6issd")
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_uogfn"]
 size = Vector3(4.376465, 4.5532227, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j7g3k"]
 albedo_texture = ExtResource("2_ckkc2")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b4gqy"]
+albedo_texture = ExtResource("12_fvoxu")
+roughness_texture = ExtResource("14_04ye1")
+emission_enabled = true
+emission_energy_multiplier = 0.0
+emission_texture = ExtResource("13_p8ske")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6tkry"]
+albedo_texture = ExtResource("4_b4gqy")
+roughness = 0.0
+roughness_texture = ExtResource("6_mmgcd")
+emission_enabled = true
+emission_energy_multiplier = 0.0
+emission_texture = ExtResource("5_6issd")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u7viv"]
+albedo_texture = ExtResource("4_b4gqy")
+roughness = 0.0
+roughness_texture = ExtResource("6_mmgcd")
+emission_enabled = true
+emission_energy_multiplier = 0.0
+emission_texture = ExtResource("5_6issd")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1sgiw"]
+albedo_texture = ExtResource("4_b4gqy")
+roughness = 0.0
+roughness_texture = ExtResource("6_mmgcd")
+emission_enabled = true
+emission_energy_multiplier = 0.0
+emission_texture = ExtResource("5_6issd")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mmgcd"]
+albedo_texture = ExtResource("12_fvoxu")
+roughness_texture = ExtResource("14_04ye1")
+emission_enabled = true
+emission_energy_multiplier = 0.0
+emission_texture = ExtResource("13_p8ske")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_dt2hs"]
 size = Vector3(3.194336, 2.6486816, 2.4630127)
@@ -114,6 +166,13 @@ spot_range = 11.58806
 [node name="button_large" parent="CSGBox3D2" instance=ExtResource("3_8ell3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.986312, -9.950001, -8.113567)
 
+[node name="Skeleton3D" parent="CSGBox3D2/button_large/Armature" index="0"]
+bones/1/position = Vector3(0, 1, 0)
+bones/1/scale = Vector3(1, 1, 1)
+
+[node name="button_large" parent="CSGBox3D2/button_large/Armature/Skeleton3D" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_jkcle")
+
 [node name="audioTrigger" parent="CSGBox3D2" instance=ExtResource("15_a15vq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.651143, -3.994444, 4.624017)
 sound = ExtResource("5_bt4d6")
@@ -203,6 +262,20 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.166681, 3.8940184, -4.5083
 [node name="Door_Enter" parent="." instance=ExtResource("6_3jweh")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -0.99861634, 0.05457735, -0.6559829)
 
+[node name="Skeleton3D" parent="Door_Enter/Armature" index="0"]
+bones/1/position = Vector3(-1.4317775e-19, 1.1966895, -7.916066e-16)
+bones/2/position = Vector3(-1.0462017, 1.1966895, 7.237446e-10)
+bones/3/rotation = Quaternion(0.5000002, 0.50000006, 0.49999997, 0.49999997)
+
+[node name="door" parent="Door_Enter/Armature/Skeleton3D" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_b4gqy")
+
+[node name="BoneAttachment3D" parent="Door_Enter/Armature/Skeleton3D" index="1"]
+transform = Transform3D(6.917773e-10, 1, -7.660539e-15, 1, -6.91777e-10, -3.9019267e-07, -3.9019267e-07, -7.382983e-15, -1, -1.0462017, 1.1966895, -1.0347395e-10)
+
+[node name="BoneAttachment3D2" parent="Door_Enter/Armature/Skeleton3D" index="2"]
+transform = Transform3D(-6.917771e-10, 1, -3.2196468e-15, -1, -6.91777e-10, 7.558438e-08, 7.558438e-08, -3.8302694e-15, 1, 8.278423e-10, 1.1966895, -1.0348108e-10)
+
 [node name="CSGBox3D8" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 1, -13)
 material_override = ExtResource("1_bxlid")
@@ -260,8 +333,22 @@ transform = Transform3D(0.64, 0, 0, 0, -2.7975288e-08, 0.64, 0, -0.64, -2.797528
 [node name="button_large" parent="." instance=ExtResource("3_8ell3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.583155, 2.0055563, -12.675762)
 
+[node name="Skeleton3D" parent="button_large/Armature" index="0"]
+bones/1/position = Vector3(0, 1, 0)
+bones/1/scale = Vector3(1, 1, 1)
+
+[node name="button_large" parent="button_large/Armature/Skeleton3D" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_6tkry")
+
 [node name="button_large2" parent="." instance=ExtResource("3_8ell3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.748523, 6.005556, -12.984659)
+
+[node name="Skeleton3D" parent="button_large2/Armature" index="0"]
+bones/1/position = Vector3(0, 1, 0)
+bones/1/scale = Vector3(1, 1, 1)
+
+[node name="button_large" parent="button_large2/Armature/Skeleton3D" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_u7viv")
 
 [node name="Player_pawn" parent="." instance=ExtResource("11_wovge")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -4.804604, 0.47757605, -0.8093978)
@@ -269,9 +356,30 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -4.8
 [node name="button_large3" parent="." instance=ExtResource("3_8ell3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.726778, 6.005556, 12.572178)
 
+[node name="Skeleton3D" parent="button_large3/Armature" index="0"]
+bones/1/position = Vector3(0, 1, 0)
+bones/1/scale = Vector3(1, 1, 1)
+
+[node name="button_large" parent="button_large3/Armature/Skeleton3D" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_1sgiw")
+
 [node name="Door_Exit" parent="." instance=ExtResource("12_mr6v0")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 14.998127, 6.005556, -0.75666773)
 buttons = Array[NodePath]([NodePath("../button_large3"), NodePath("../CSGBox3D2/button_large"), NodePath("../button_large"), NodePath("../button_large2")])
+
+[node name="Skeleton3D" parent="Door_Exit/Armature" index="0"]
+bones/1/position = Vector3(-1.4317775e-19, 1.1966895, -7.916066e-16)
+bones/2/position = Vector3(-1.0462017, 1.1966895, 7.237446e-10)
+bones/3/rotation = Quaternion(0.5000002, 0.50000006, 0.49999997, 0.49999997)
+
+[node name="door" parent="Door_Exit/Armature/Skeleton3D" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_mmgcd")
+
+[node name="BoneAttachment3D" parent="Door_Exit/Armature/Skeleton3D" index="1"]
+transform = Transform3D(6.917773e-10, 1, -7.660539e-15, 1, -6.91777e-10, -3.9019267e-07, -3.9019267e-07, -7.382983e-15, -1, -1.0462017, 1.1966895, -1.0347395e-10)
+
+[node name="BoneAttachment3D2" parent="Door_Exit/Armature/Skeleton3D" index="2"]
+transform = Transform3D(-6.917771e-10, 1, -3.2196468e-15, -1, -6.91777e-10, 7.558438e-08, 7.558438e-08, -3.8302694e-15, 1, 8.278423e-10, 1.1966895, -1.0348108e-10)
 
 [node name="corner" parent="." instance=ExtResource("16_uuc3c")]
 transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, 21.043663, 5.940935, 2)
@@ -310,7 +418,14 @@ parameters/looping = false
 [editable path="CSGBox3D2/Ceiling Light10"]
 [editable path="CSGBox3D2/Ceiling Light5"]
 [editable path="CSGBox3D2/Ceiling Light6"]
+[editable path="CSGBox3D2/button_large"]
 [editable path="CSGBox3D2/audioTrigger"]
+[editable path="Door_Enter"]
+[editable path="button_large"]
+[editable path="button_large2"]
+[editable path="button_large3"]
+[editable path="Door_Exit"]
 [editable path="corner"]
+[editable path="corner/Door_Exit_fake"]
 [editable path="corner/levelTriger"]
 [editable path="audioTrigger"]
