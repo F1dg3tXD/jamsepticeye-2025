@@ -1,0 +1,85 @@
+[gd_scene load_steps=6 format=3 uid="uid://dscoopd0b6fn4"]
+
+[ext_resource type="PackedScene" uid="uid://bg71h43w1v1qw" path="res://Globals/env.tscn" id="1_namdn"]
+[ext_resource type="Material" uid="uid://chno48qqvah8f" path="res://materials/ct_floor.tres" id="2_76xr6"]
+[ext_resource type="PackedScene" uid="uid://t0upe6f63563" path="res://models/ceiling_light.tscn" id="3_76xr6"]
+[ext_resource type="PackedScene" uid="uid://b6a8kh0nrt4tp" path="res://models/iceCube.tscn" id="4_d23wr"]
+[ext_resource type="PackedScene" uid="uid://rahvohrxtbfr" path="res://models/iceRect.tscn" id="5_megxs"]
+
+[node name="menu_bg" type="Node3D"]
+
+[node name="env" parent="." instance=ExtResource("1_namdn")]
+
+[node name="Ceiling Light" parent="." instance=ExtResource("3_76xr6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 6, -2.5)
+
+[node name="Ceiling Light2" parent="." instance=ExtResource("3_76xr6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 6, 2.5)
+
+[node name="Ceiling Light3" parent="." instance=ExtResource("3_76xr6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 6, -2.5)
+
+[node name="Ceiling Light4" parent="." instance=ExtResource("3_76xr6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 6, 2.5)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 4.9901733)
+material_override = ExtResource("2_76xr6")
+use_collision = true
+size = Vector3(10, 6, 0.1)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, -5.0098267)
+material_override = ExtResource("2_76xr6")
+use_collision = true
+size = Vector3(10, 6, 0.1)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 5, 3, -0.009826879)
+material_override = ExtResource("2_76xr6")
+use_collision = true
+size = Vector3(10, 6, 0.1)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -5, 3, -0.009826441)
+material_override = ExtResource("2_76xr6")
+use_collision = true
+size = Vector3(10, 6, 0.1)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+material_override = ExtResource("2_76xr6")
+use_collision = true
+size = Vector3(10, 0.1, 10)
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 0)
+material_override = ExtResource("2_76xr6")
+use_collision = true
+size = Vector3(10, 0.1, 10)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5922493, 3.2998285)
+
+[node name="iceCube" parent="." instance=ExtResource("4_d23wr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.3586576, 2.8704658, -0.6859379)
+
+[node name="iceCube2" parent="." instance=ExtResource("4_d23wr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15194964, 4.531504, -0.6859379)
+
+[node name="iceRect" parent="." instance=ExtResource("5_megxs")]
+transform = Transform3D(0.8660254, -0.5, 0, 0.5, 0.8660254, 0, 0, 0, 1, -0.19386005, 2.417474, -1.2802452)
+
+[node name="iceRect2" parent="." instance=ExtResource("5_megxs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6454993, 3.0252202, -1.8888881)
+
+[node name="iceCube3" parent="." instance=ExtResource("4_d23wr")]
+transform = Transform3D(0.87926644, 0.1902869, -0.43667084, 0, 0.91673964, 0.3994852, 0.47633028, -0.35125393, 0.8060584, -2.3577123, 3.6862175, -0.40335962)
+
+[node name="iceCube4" parent="." instance=ExtResource("4_d23wr")]
+transform = Transform3D(0.87926644, 0.1902869, -0.43667084, 0, 0.91673964, 0.3994852, 0.47633028, -0.35125393, 0.8060584, 0.16585422, 5.208957, 0.20907232)
+
+[node name="iceRect3" parent="." instance=ExtResource("5_megxs")]
+transform = Transform3D(0.8566105, -0.27483994, -0.43667084, 0.4583698, 0.79391974, 0.3994852, 0.23688714, -0.5423599, 0.80605835, -0.28096017, 3.0335252, 0.30786765)
+
+[node name="iceRect4" parent="." instance=ExtResource("5_megxs")]
+transform = Transform3D(0.87926644, 0.1902869, -0.43667084, 0, 0.91673964, 0.3994852, 0.47633028, -0.35125393, 0.8060584, 1.7177496, 3.3475263, 0.47993538)

@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://ds6bb6g86fdqx"]
+
+[ext_resource type="PackedScene" uid="uid://ce22imaghi1iv" path="res://models/props/godot_plush_model/godot_plush_model.tscn" id="1_0yj3b"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_x4v6x"]
+
+[node name="plush" type="RigidBody3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("SphereShape3D_x4v6x")
+
+[node name="godot_plush_model" parent="." instance=ExtResource("1_0yj3b")]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0, 0)

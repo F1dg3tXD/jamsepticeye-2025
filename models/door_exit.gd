@@ -3,7 +3,7 @@ extends Node3D
 @onready var animation_tree: AnimationTree = $AnimationTree
 @export var buttons: Array[NodePath] = []
 @onready var area_3d: Area3D = $Area3D
-@export var next_scene: String
+#@export var next_scene: String
 
 var button_nodes: Array[ButtonLarge] = []
 
@@ -45,21 +45,21 @@ func _check_buttons() -> void:
 	animation_tree.set("parameters/conditions/!isOpen", !all_pressed)
 	# print("Door open =", all_pressed)
 
-func _on_area_3d_body_entered(body: Node3D) -> void:
-	print("Entered door area:", body)
-	print("Door open =", animation_tree.get("parameters/conditions/isOpen"))
-	if body.is_in_group("player_pawn"):
-		print("Loading next level...")
-		load_next_level()
-
-func load_next_level() -> void:
-	if next_scene == "":
-		push_warning("DoorExit: no next scene path assigned.")
-		return
-
-	if Engine.has_singleton("SceneLoader"):
-		var scene_loader = Engine.get_singleton("SceneLoader")
-		scene_loader.load_scene(next_scene)
-	else:
-		push_warning("DoorExit: SceneLoader singleton not found. Falling back to default change_scene.")
-		get_tree().change_scene_to_file(next_scene)
+#func _on_area_3d_body_entered(body: Node3D) -> void:
+	#print("Entered door area:", body)
+	#print("Door open =", animation_tree.get("parameters/conditions/isOpen"))
+	#if body.is_in_group("player_pawn"):
+		#print("Loading next level...")
+		#load_next_level()
+#
+#func load_next_level() -> void:
+	#if next_scene == "":
+		#push_warning("DoorExit: no next scene path assigned.")
+		#return
+#
+	#if Engine.has_singleton("SceneLoader"):
+		#var scene_loader = Engine.get_singleton("SceneLoader")
+		#scene_loader.load_scene(next_scene)
+	#else:
+		#push_warning("DoorExit: SceneLoader singleton not found. Falling back to default change_scene.")
+		#get_tree().change_scene_to_file(next_scene)

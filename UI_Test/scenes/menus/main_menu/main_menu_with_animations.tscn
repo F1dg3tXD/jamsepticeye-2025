@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://bx4f628dg5i1j"]
+[gd_scene load_steps=24 format=3 uid="uid://bx4f628dg5i1j"]
 
 [ext_resource type="Script" uid="uid://dy1nwgp6fb4cv" path="res://UI_Test/scenes/menus/main_menu/main_menu_with_animations.gd" id="2_1gpyj"]
 [ext_resource type="PackedScene" uid="uid://bk1stkp08or6k" path="res://UI_Test/scenes/overlaid_menus/master_options_overlaid_menu.tscn" id="3_xs16x"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bkcsjsk2ciff" path="res://addons/maaacks_menus_template/base/scenes/music_players/background_music_player.tscn" id="5_t5a0p"]
 [ext_resource type="Script" uid="uid://dmkubt2nsnsbn" path="res://addons/maaacks_menus_template/base/scenes/menus/main_menu/config_version_label.gd" id="6_6va62"]
 [ext_resource type="AudioStream" uid="uid://fr5qvphlcv58" path="res://sounds/music/＂Portal 2＂ Mysterious Space Background Music No Copyright [X_h0ESSNe8E].mp3" id="6_t5a0p"]
+[ext_resource type="PackedScene" uid="uid://dscoopd0b6fn4" path="res://maps/menu_bg.tscn" id="7_6va62"]
 [ext_resource type="Script" uid="uid://bkwlopi4qn32o" path="res://addons/maaacks_menus_template/base/scenes/menus/main_menu/config_name_label.gd" id="7_c3vvd"]
 [ext_resource type="Script" uid="uid://1nf36h0gms3q" path="res://addons/maaacks_menus_template/base/scripts/capture_focus.gd" id="8_gam6r"]
 
@@ -347,6 +348,19 @@ parameters/conditions/intro_done = false
 stream = ExtResource("6_t5a0p")
 parameters/looping = false
 
+[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+size = Vector2i(1280, 720)
+
+[node name="menu_bg" parent="SubViewportContainer/SubViewport" instance=ExtResource("7_6va62")]
+
 [node name="BackgroundTextureRect" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
@@ -385,7 +399,7 @@ offset_left = -88.0
 offset_top = -26.0
 grow_horizontal = 0
 grow_vertical = 0
-text = "v0.01a"
+text = "v0.01b"
 horizontal_alignment = 2
 script = ExtResource("6_6va62")
 

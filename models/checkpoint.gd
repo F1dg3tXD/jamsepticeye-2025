@@ -5,7 +5,7 @@ extends Node3D
 @onready var checkpoint_text: Label3D = $checkpointText
 @export var rotation_speed: float = 0.01 # Degrees per second
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	checkpoint_text.rotate_z(rotation_speed)
 
 func _on_area_3d_body_entered(body: Node3D) -> void:

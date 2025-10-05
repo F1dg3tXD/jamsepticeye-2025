@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cxblwkdx25pp4"
-path="res://.godot/imported/button_large.fbx-57d9f8601c0438185e9773386405e4b1.scn"
+uid="uid://cml8fswfa7w0o"
+path="res://.godot/imported/godot_plush_model.glb-4e6c57bb9101ef3f8a8f1170870b1164.scn"
 
 [deps]
 
-source_file="res://models/button_large.fbx"
-dest_files=["res://.godot/imported/button_large.fbx-57d9f8601c0438185e9773386405e4b1.scn"]
+source_file="res://models/props/godot_plush_model/godot_plush_model.glb"
+dest_files=["res://.godot/imported/godot_plush_model.glb-4e6c57bb9101ef3f8a8f1170870b1164.scn"]
 
 [params]
 
@@ -30,7 +30,7 @@ meshes/force_disable_compression=false
 skins/use_named_skins=true
 animation/import=true
 animation/fps=30
-animation/trimming=true
+animation/trimming=false
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
@@ -38,7 +38,5 @@ materials/extract=0
 materials/extract_format=0
 materials/extract_path=""
 _subresources={}
-fbx/importer=0
-fbx/allow_geometry_helper_nodes=false
-fbx/embedded_image_handling=1
-fbx/naming_version=2
+gltf/naming_version=2
+gltf/embedded_image_handling=1

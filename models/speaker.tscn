@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://b5leb0ww40bd5"]
+
+[ext_resource type="PackedScene" uid="uid://b5o4w0hsvn8bj" path="res://models/props/speaker/speaker.glb" id="1_xsg6g"]
+[ext_resource type="Script" uid="uid://dyv7dgri4uk14" path="res://models/speaker.gd" id="2_u2gp6"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u2gp6"]
+albedo_color = Color(0, 0, 0, 1)
+metallic_specular = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_itj5o"]
+albedo_color = Color(1, 0, 0, 1)
+
+[node name="speaker" instance=ExtResource("1_xsg6g")]
+script = ExtResource("2_u2gp6")
+
+[node name="Cube_001" parent="Armature/Skeleton3D" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_u2gp6")
+surface_material_override/1 = SubResource("StandardMaterial3D_itj5o")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." index="1"]
+bus = &"Voices"

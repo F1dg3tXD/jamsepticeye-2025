@@ -14,6 +14,23 @@ text = "[center][font_size=48]Collaborators[/font_size]
 [url=https://f1dg3t.itch.io]F1dg3t[/url]  
 
 [font_size=48]Assets[/font_size]
+[font_size=32]Music[/font_size]
+
+[font_size=24]- \"Portal 2 Mysterious Space Background Music (No Copyright)\"  [/font_size]
+Author: [url=https://www.youtube.com/@GravitySound]Gravity Sound[/url]   
+Source: [url=https://www.youtube.com/watch?v=X_h0ESSNe8E]X_h0ESSNe8E[/url]
+License: [url=https://creativecommons.org/publicdomain/zero/1.0/]CC0 1.0 Universal[/url]
+
+[font_size=24]- \"Portal Mysterious Space Background Music (No Copyright)\"  [/font_size]
+Author: [url=https://www.youtube.com/@GravitySound]Gravity Sound[/url]   
+Source: [url=https://www.youtube.com/watch?v=ziFxpjRbfJc]hziFxpjRbfJc[/url]
+License: [url=https://creativecommons.org/publicdomain/zero/1.0/]CC0 1.0 Universal[/url]
+
+[font_size=24]- \"Point - Mysterious Suspense Background Music No Copyright\"  [/font_size]
+Author: [url=https://www.youtube.com/@GravitySound]Gravity Sound[/url]   
+Source: [url=https://www.youtube.com/watch?v=ziFxpjRbfJc]4vHVCmkrQN0[/url]
+License: [url=https://creativecommons.org/publicdomain/zero/1.0/]CC0 1.0 Universal[/url]
+
 [font_size=32]Textures[/font_size]
 [font_size=24]Level Editing[/font_size]
 Author: [url=https://kenney.nl]Kenny[/url]  
@@ -45,20 +62,3 @@ Source: [url=https://git-scm.com/downloads]git-scm.com[/url]
 License: [url=https://opensource.org/licenses/GPL-2.0]GNU General Public License version 2[/url]
 [/center]"
 attribution_file_path = "res://UI_Test/ATTRIBUTION.md"
-
-[node name="Button" type="Button" parent="." index="1"]
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -92.0
-offset_top = -79.0
-offset_right = -35.0
-offset_bottom = -32.0
-grow_horizontal = 0
-grow_vertical = 0
-text = "Skip"
-
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

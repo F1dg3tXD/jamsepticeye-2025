@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://big633a15qrjk"]
+
+[ext_resource type="Material" uid="uid://bfgej76cbxi6j" path="res://materials/arrow.tres" id="1_33b2i"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_xfax4"]
+
+[node name="Arrow" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("QuadMesh_xfax4")
+surface_material_override/0 = ExtResource("1_33b2i")

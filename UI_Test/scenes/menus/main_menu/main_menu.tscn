@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://coq2cgva2ixvi"]
+[gd_scene load_steps=11 format=3 uid="uid://coq2cgva2ixvi"]
 
 [ext_resource type="Script" uid="uid://jul8t1mbnyh8" path="res://UI_Test/scenes/menus/main_menu/main_menu.gd" id="2_1awn1"]
 [ext_resource type="PackedScene" uid="uid://bk1stkp08or6k" path="res://UI_Test/scenes/overlaid_menus/master_options_overlaid_menu.tscn" id="3_maaqw"]
@@ -8,6 +8,7 @@
 [ext_resource type="AudioStream" uid="uid://fr5qvphlcv58" path="res://sounds/music/＂Portal 2＂ Mysterious Space Background Music No Copyright [X_h0ESSNe8E].mp3" id="6_23cyv"]
 [ext_resource type="Script" uid="uid://dmkubt2nsnsbn" path="res://addons/maaacks_menus_template/base/scenes/menus/main_menu/config_version_label.gd" id="6_bqpce"]
 [ext_resource type="Script" uid="uid://bkwlopi4qn32o" path="res://addons/maaacks_menus_template/base/scenes/menus/main_menu/config_name_label.gd" id="7_77txs"]
+[ext_resource type="PackedScene" uid="uid://dscoopd0b6fn4" path="res://maps/menu_bg.tscn" id="7_bqpce"]
 [ext_resource type="Script" uid="uid://1nf36h0gms3q" path="res://addons/maaacks_menus_template/base/scripts/capture_focus.gd" id="8_2c0yu"]
 
 [node name="MainMenu" type="Control"]
@@ -35,6 +36,8 @@ offset_bottom = 40.0
 [node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
 handle_input_locally = false
 render_target_update_mode = 4
+
+[node name="menu_bg" parent="SubViewportContainer/SubViewport" instance=ExtResource("7_bqpce")]
 
 [node name="BackgroundTextureRect" type="TextureRect" parent="."]
 layout_mode = 1
@@ -73,7 +76,7 @@ offset_left = -88.0
 offset_top = -26.0
 grow_horizontal = 0
 grow_vertical = 0
-text = "v0.01a"
+text = "v0.01b"
 horizontal_alignment = 2
 script = ExtResource("6_bqpce")
 

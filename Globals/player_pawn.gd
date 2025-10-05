@@ -12,6 +12,7 @@ extends CharacterBody3D
 @onready var gun_particles_2: CPUParticles3D = $"Head/Hand/FreezeGun/freeze gun/CPUParticles3D2"
 @onready var ice_spawn: Node3D = $IceSpawn
 @onready var crosshair: Control = $Crosshair
+@onready var no_check: Control = $no_check
 
 var held_object: RigidBody3D = null
 
@@ -51,6 +52,7 @@ func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	gun_animation_player.play("Idle")
 	crosshair.visible = false
+	no_check.visible = false
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
@@ -219,7 +221,11 @@ func respawn() -> void:
 		spawn = get_node_or_null(Game.default_spawn)
 
 	if not spawn:
-		push_error("No valid spawn point found!")
+		no_check.visible = true
+		var nocheck_time = 2.0
+		await get_tree().create_timer(nocheck_time).timeout 
+		no_check.visible = false
+		#push_error("No valid spawn point found!")
 		return
 
 	# Check if player is inside a checkpoint area

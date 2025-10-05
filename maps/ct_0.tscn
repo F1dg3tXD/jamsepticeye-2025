@@ -1,24 +1,39 @@
-[gd_scene load_steps=14 format=3 uid="uid://bgy4d7772gulk"]
+[gd_scene load_steps=25 format=3 uid="uid://bgy4d7772gulk"]
 
 [ext_resource type="Script" uid="uid://cdqpjma8h0mbx" path="res://maps/ct_0.gd" id="1_4k8gy"]
 [ext_resource type="PackedScene" uid="uid://bg71h43w1v1qw" path="res://Globals/env.tscn" id="1_5hi47"]
 [ext_resource type="PackedScene" uid="uid://blstrvusmss87" path="res://Globals/Player_pawn.tscn" id="2_7yim2"]
-[ext_resource type="Texture2D" uid="uid://b6ejftrv5jflr" path="res://addons/kenney_prototype-textures/PNG/Green/texture_01.png" id="2_wjo6b"]
 [ext_resource type="Texture2D" uid="uid://db2g7ow60rmlf" path="res://addons/kenney_prototype-textures/PNG/Green/texture_09.png" id="3_i1awa"]
+[ext_resource type="Material" uid="uid://be30lkumhxcb3" path="res://materials/ct_wall.tres" id="4_q7aqf"]
 [ext_resource type="PackedScene" uid="uid://ctt4gweqtowtk" path="res://models/button_large.tscn" id="6_i1awa"]
 [ext_resource type="PackedScene" uid="uid://dk4qxqjes3n65" path="res://models/checkpoint.tscn" id="7_dk2d4"]
 [ext_resource type="PackedScene" uid="uid://gt823aisyh37" path="res://models/door_exit.tscn" id="8_6jxhn"]
 [ext_resource type="AudioStream" uid="uid://c3cs207yfjmd1" path="res://sounds/music/Point - Mysterious Suspense Background Music No Copyright [4vHVCmkrQN0].mp3" id="9_e2ivw"]
 [ext_resource type="PackedScene" uid="uid://bayhjq7qqt3qp" path="res://models/door_hole.tscn" id="10_t1opd"]
 [ext_resource type="PackedScene" uid="uid://xsg4uqdy2r2k" path="res://models/door_enter.tscn" id="11_008od"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dk2d4"]
-albedo_texture = ExtResource("2_wjo6b")
-uv1_triplanar = true
-uv2_triplanar = true
+[ext_resource type="PackedScene" uid="uid://b5leb0ww40bd5" path="res://models/speaker.tscn" id="12_lx0rn"]
+[ext_resource type="Script" uid="uid://burrl3j73gaej" path="res://models/audio_trigger.gd" id="13_61skb"]
+[ext_resource type="AudioStream" uid="uid://bflamqh33vnek" path="res://sounds/vo/ct_0_intro.mp3" id="14_61skb"]
+[ext_resource type="AudioStream" uid="uid://buxtebirq8h2d" path="res://sounds/vo/ct_0_checkpoint.mp3" id="15_leq43"]
+[ext_resource type="PackedScene" uid="uid://big633a15qrjk" path="res://models/arrow.tscn" id="16_gcdyr"]
+[ext_resource type="PackedScene" uid="uid://t0upe6f63563" path="res://models/ceiling_light.tscn" id="17_efmmj"]
+[ext_resource type="AudioStream" uid="uid://bnag6883dkkko" path="res://sounds/vo/ct_0_end.mp3" id="18_q7aqf"]
+[ext_resource type="Script" uid="uid://b165xem5y2il1" path="res://models/level_triger.gd" id="19_jqkft"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wjo6b"]
 albedo_texture = ExtResource("3_i1awa")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_746we"]
+size = Vector3(6.204569, 4.881958, 2.1468506)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_61skb"]
+size = Vector3(2.079834, 2.6103516, 2.368164)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_efmmj"]
+size = Vector3(5, 4.605, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_t1opd"]
+size = Vector3(1, 3.9265747, 4.419922)
 
 [node name="CT_0" type="Node3D"]
 script = ExtResource("1_4k8gy")
@@ -34,37 +49,57 @@ use_collision = true
 [node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 5)
 size = Vector3(10, 5, 0.1)
-material = SubResource("StandardMaterial3D_dk2d4")
+material = ExtResource("4_q7aqf")
 
 [node name="CSGBox3D8" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 15)
 size = Vector3(10, 5, 0.1)
-material = SubResource("StandardMaterial3D_dk2d4")
+material = ExtResource("4_q7aqf")
 
 [node name="CSGBox3D3" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, -5)
 size = Vector3(10, 5, 0.1)
-material = SubResource("StandardMaterial3D_dk2d4")
+material = ExtResource("4_q7aqf")
+
+[node name="CSGBox3D11" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 2.5, -15)
+size = Vector3(10, 5, 0.1)
+material = ExtResource("4_q7aqf")
+
+[node name="CSGBox3D12" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 2.5, -11)
+size = Vector3(10, 5, 0.1)
+material = ExtResource("4_q7aqf")
 
 [node name="CSGBox3D4" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -5, 2.5, -2.1855695e-07)
 size = Vector3(10, 5, 0.1)
-material = SubResource("StandardMaterial3D_dk2d4")
+material = ExtResource("4_q7aqf")
 
 [node name="CSGBox3D5" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 5, 2.5, 2.1855695e-07)
 size = Vector3(10, 5, 0.1)
-material = SubResource("StandardMaterial3D_dk2d4")
+material = ExtResource("4_q7aqf")
+
+[node name="CSGBox3D9" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -2, 2.5, -8)
+size = Vector3(6, 5, 0.1)
+material = ExtResource("4_q7aqf")
+
+[node name="CSGBox3D10" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 2, 2.5, -10)
+size = Vector3(10, 5, 0.1)
+material = ExtResource("4_q7aqf")
 
 [node name="CSGBox3D6" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -3, 2.5, 10)
 size = Vector3(10, 5, 0.1)
-material = SubResource("StandardMaterial3D_dk2d4")
+material = ExtResource("4_q7aqf")
 
 [node name="CSGBox3D7" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 3, 2.5, 10)
 size = Vector3(10, 5, 0.1)
-material = SubResource("StandardMaterial3D_dk2d4")
+material = ExtResource("4_q7aqf")
 
 [node name="CSGCombiner3D" type="CSGCombiner3D" parent="CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.17744136, 0.5, -5.35)
@@ -82,20 +117,69 @@ operation = 2
 size = Vector3(2.5009766, 1, 2.3740234)
 
 [node name="CSGCombiner3D2" parent="CSGCombiner3D" instance=ExtResource("10_t1opd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2080558, 0.049950898, 5.005819)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2105487, 0.062145293, 5.00108)
 
 [node name="CSGBox3D6" type="CSGBox3D" parent="."]
 material_override = SubResource("StandardMaterial3D_wjo6b")
 use_collision = true
 size = Vector3(10, 0.1, 10)
-material = SubResource("StandardMaterial3D_dk2d4")
+material = ExtResource("4_q7aqf")
+
+[node name="CSGBox3D14" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+material_override = SubResource("StandardMaterial3D_wjo6b")
+use_collision = true
+size = Vector3(10, 0.1, 10)
+material = ExtResource("4_q7aqf")
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -10)
+material_override = SubResource("StandardMaterial3D_wjo6b")
+use_collision = true
+size = Vector3(10, 0.1, 10)
+material = ExtResource("4_q7aqf")
+
+[node name="CSGBox3D10" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -15)
+material_override = SubResource("StandardMaterial3D_wjo6b")
+use_collision = true
+size = Vector3(10, 0.1, 10)
+material = ExtResource("4_q7aqf")
+
+[node name="CSGBox3D9" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, -10)
+material_override = SubResource("StandardMaterial3D_wjo6b")
+use_collision = true
+size = Vector3(10, 0.1, 10)
+material = ExtResource("4_q7aqf")
+
+[node name="CSGBox3D11" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 4, -15)
+material_override = SubResource("StandardMaterial3D_wjo6b")
+use_collision = true
+size = Vector3(10, 0.1, 10)
+material = ExtResource("4_q7aqf")
+
+[node name="CSGBox3D12" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 2.05, -15)
+material_override = SubResource("StandardMaterial3D_wjo6b")
+use_collision = true
+size = Vector3(1, 4, 10)
+material = ExtResource("4_q7aqf")
 
 [node name="CSGBox3D7" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10)
 material_override = SubResource("StandardMaterial3D_wjo6b")
 use_collision = true
 size = Vector3(10, 0.1, 10)
-material = SubResource("StandardMaterial3D_dk2d4")
+material = ExtResource("4_q7aqf")
+
+[node name="CSGBox3D13" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 10)
+material_override = SubResource("StandardMaterial3D_wjo6b")
+use_collision = true
+size = Vector3(10, 0.1, 10)
+material = ExtResource("4_q7aqf")
 
 [node name="button_large" parent="." instance=ExtResource("6_i1awa")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6795719, 0.050000668, -1.5832429)
@@ -105,9 +189,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3204281, 0.050000668, -1.58
 
 [node name="Checkpoint" parent="." instance=ExtResource("7_dk2d4")]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 2.5985892, 0.02111435, 2.288731)
-
-[node name="Checkpoint2" parent="." instance=ExtResource("7_dk2d4")]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -3.0393512, 0.02111435, 2.915176)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("9_e2ivw")
@@ -121,7 +202,99 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2080558, 0.049950898, 5.00
 [node name="Door_Exit" parent="." instance=ExtResource("8_6jxhn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.17431426, 0.050000668, -4.9976034)
 buttons = Array[NodePath]([NodePath("../button_large"), NodePath("../button_large2")])
-next_scene = "res://UI_Test/scenes/credits/scrolling_credits.tscn"
+
+[node name="speaker" parent="." instance=ExtResource("12_lx0rn")]
+transform = Transform3D(-0.25000003, -0.43301266, 0.8660253, 0.8660254, -0.50000006, 0, 0.43301272, 0.74999994, 0.49999997, 2.744996, 2.5701354, 5.235212)
+
+[node name="audioTrigger" type="Node3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.013854623, 2.4434237, 10.538451)
+script = ExtResource("13_61skb")
+sound = ExtResource("14_61skb")
+speaker = NodePath("../speaker")
+
+[node name="Area3D" type="Area3D" parent="audioTrigger"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="audioTrigger/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.028452873, 0, 0)
+shape = SubResource("BoxShape3D_746we")
+
+[node name="audioTrigger2" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.1237183, 0.52436066, 1.9729172)
+script = ExtResource("13_61skb")
+sound = ExtResource("15_leq43")
+speaker = NodePath("../speaker2")
+
+[node name="Area3D" type="Area3D" parent="audioTrigger2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.68265, 0, 0.25584447)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="audioTrigger2/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.84776807, 0)
+shape = SubResource("BoxShape3D_61skb")
+
+[node name="speaker2" parent="." instance=ExtResource("12_lx0rn")]
+transform = Transform3D(2.1073424e-08, -0.70710677, -0.70710677, 1, 2.9802322e-08, 0, 2.1073424e-08, -0.70710677, 0.70710677, 4.7786136, 2.8218436, 4.7988753)
+
+[node name="Arrow" parent="." instance=ExtResource("16_gcdyr")]
+transform = Transform3D(-2.1009622, 1.8367194e-07, 0, -1.8367194e-07, -2.1009622, 0, 0, 0, 1, -0.2907924, 1.7475443, -14.620619)
+
+[node name="Label3D" type="Label3D" parent="Arrow"]
+transform = Transform3D(-1, 8.742278e-08, 0, -8.742278e-08, -1, 0, 0, 0, 1, -0.011658445, 0, 0)
+text = "Next Level"
+
+[node name="Ceiling Light" parent="." instance=ExtResource("17_efmmj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.047738552, 4.8434324, 12.013315)
+
+[node name="Ceiling Light2" parent="." instance=ExtResource("17_efmmj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.047738552, 4.8434324, 7.9656105)
+
+[node name="Ceiling Light3" parent="." instance=ExtResource("17_efmmj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5293913, 4.843432, 2.4099836)
+
+[node name="Ceiling Light4" parent="." instance=ExtResource("17_efmmj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4706087, 4.843432, -2.5900164)
+
+[node name="Ceiling Light5" parent="." instance=ExtResource("17_efmmj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5293913, 4.843432, -2.5900164)
+
+[node name="Ceiling Light6" parent="." instance=ExtResource("17_efmmj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4706087, 4.843432, 2.4099836)
+
+[node name="Ceiling Light7" parent="." instance=ExtResource("17_efmmj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.075590566, 3.9201741, -9.436523)
+
+[node name="Ceiling Light8" parent="." instance=ExtResource("17_efmmj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.1666818, 3.8940184, -13.508384)
+
+[node name="audioTrigger3" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.055730045, 1.0078244, -6.578538)
+script = ExtResource("13_61skb")
+sound = ExtResource("18_q7aqf")
+speaker = NodePath("Area3D/speaker")
+
+[node name="Area3D" type="Area3D" parent="audioTrigger3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="audioTrigger3/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.65341187, 0)
+shape = SubResource("BoxShape3D_efmmj")
+
+[node name="speaker" parent="audioTrigger3/Area3D" instance=ExtResource("12_lx0rn")]
+transform = Transform3D(1, 0, 0, 0, -0.25881904, -0.9659258, 0, 0.9659258, -0.25881904, 1.5854096, 1.8938818, -8.3517885)
+
+[node name="levelTriger" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.824341, 0.69696355, -13.084164)
+script = ExtResource("19_jqkft")
+next_scene = "res://maps/ct_1.tscn"
+
+[node name="Area3D" type="Area3D" parent="levelTriger"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="levelTriger/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2970886, 0)
+shape = SubResource("BoxShape3D_t1opd")
+
+[connection signal="body_entered" from="audioTrigger/Area3D" to="audioTrigger" method="_on_area_3d_body_entered"]
+[connection signal="body_entered" from="audioTrigger2/Area3D" to="audioTrigger2" method="_on_area_3d_body_entered"]
+[connection signal="body_entered" from="audioTrigger3/Area3D" to="audioTrigger3" method="_on_area_3d_body_entered"]
+[connection signal="body_entered" from="levelTriger/Area3D" to="levelTriger" method="_on_area_3d_body_entered"]
 
 [editable path="Checkpoint"]
-[editable path="Checkpoint2"]

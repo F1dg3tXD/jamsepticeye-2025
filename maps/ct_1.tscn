@@ -1,0 +1,315 @@
+[gd_scene load_steps=22 format=3 uid="uid://cu0gx22qu2wlw"]
+
+[ext_resource type="Material" uid="uid://chno48qqvah8f" path="res://materials/ct_floor.tres" id="1_7q6ti"]
+[ext_resource type="Material" uid="uid://be30lkumhxcb3" path="res://materials/ct_wall.tres" id="1_bxlid"]
+[ext_resource type="Texture2D" uid="uid://db2g7ow60rmlf" path="res://addons/kenney_prototype-textures/PNG/Green/texture_09.png" id="2_ckkc2"]
+[ext_resource type="PackedScene" uid="uid://ctt4gweqtowtk" path="res://models/button_large.tscn" id="3_8ell3"]
+[ext_resource type="PackedScene" uid="uid://bayhjq7qqt3qp" path="res://models/door_hole.tscn" id="3_b4jjj"]
+[ext_resource type="PackedScene" uid="uid://t0upe6f63563" path="res://models/ceiling_light.tscn" id="3_j7g3k"]
+[ext_resource type="AudioStream" uid="uid://df2utg4amxcln" path="res://sounds/vo/ct_1_end.mp3" id="5_bt4d6"]
+[ext_resource type="PackedScene" uid="uid://bg71h43w1v1qw" path="res://Globals/env.tscn" id="5_xisn3"]
+[ext_resource type="PackedScene" uid="uid://xsg4uqdy2r2k" path="res://models/door_enter.tscn" id="6_3jweh"]
+[ext_resource type="PackedScene" uid="uid://dk4qxqjes3n65" path="res://models/checkpoint.tscn" id="9_lduqk"]
+[ext_resource type="PackedScene" uid="uid://blstrvusmss87" path="res://Globals/Player_pawn.tscn" id="11_wovge"]
+[ext_resource type="PackedScene" uid="uid://gt823aisyh37" path="res://models/door_exit.tscn" id="12_mr6v0"]
+[ext_resource type="PackedScene" uid="uid://ty7uuwhj4mbi" path="res://models/audioTrigger.tscn" id="15_a15vq"]
+[ext_resource type="AudioStream" uid="uid://d3oqxsgtx1s4r" path="res://sounds/vo/ct_1_intro.mp3" id="16_dt2hs"]
+[ext_resource type="PackedScene" uid="uid://d2m2ycuy73gxj" path="res://models/map_corner_end.tscn" id="16_uuc3c"]
+[ext_resource type="PackedScene" uid="uid://ds6bb6g86fdqx" path="res://models/props/godot_plush_model/plush.tscn" id="17_bt4d6"]
+[ext_resource type="PackedScene" uid="uid://b5leb0ww40bd5" path="res://models/speaker.tscn" id="17_uuc3c"]
+[ext_resource type="AudioStream" uid="uid://c3cs207yfjmd1" path="res://sounds/music/Point - Mysterious Suspense Background Music No Copyright [4vHVCmkrQN0].mp3" id="18_bt4d6"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_uogfn"]
+size = Vector3(4.376465, 4.5532227, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j7g3k"]
+albedo_texture = ExtResource("2_ckkc2")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dt2hs"]
+size = Vector3(3.194336, 2.6486816, 2.4630127)
+
+[node name="ct_1" type="Node3D"]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+material_override = ExtResource("1_7q6ti")
+use_collision = true
+size = Vector3(30, 0.1, 30)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 10, 0)
+material_override = ExtResource("1_7q6ti")
+use_collision = true
+size = Vector3(16, 0.1, 30)
+
+[node name="Ceiling Light" parent="CSGBox3D2" instance=ExtResource("3_j7g3k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
+
+[node name="SpotLight3D" parent="CSGBox3D2/Ceiling Light" index="1"]
+light_energy = 10.0
+spot_range = 11.58806
+
+[node name="Ceiling Light3" parent="CSGBox3D2" instance=ExtResource("3_j7g3k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -11)
+
+[node name="SpotLight3D" parent="CSGBox3D2/Ceiling Light3" index="1"]
+light_energy = 10.0
+spot_range = 11.58806
+
+[node name="Ceiling Light2" parent="CSGBox3D2" instance=ExtResource("3_j7g3k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 10)
+
+[node name="SpotLight3D" parent="CSGBox3D2/Ceiling Light2" index="1"]
+light_energy = 10.0
+spot_range = 11.58806
+
+[node name="Ceiling Light4" parent="CSGBox3D2" instance=ExtResource("3_j7g3k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
+
+[node name="SpotLight3D" parent="CSGBox3D2/Ceiling Light4" index="1"]
+light_energy = 10.0
+spot_range = 11.58806
+
+[node name="Ceiling Light7" parent="CSGBox3D2" instance=ExtResource("3_j7g3k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 5)
+
+[node name="SpotLight3D" parent="CSGBox3D2/Ceiling Light7" index="1"]
+light_energy = 10.0
+spot_range = 11.58806
+
+[node name="Ceiling Light8" parent="CSGBox3D2" instance=ExtResource("3_j7g3k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 5)
+
+[node name="SpotLight3D" parent="CSGBox3D2/Ceiling Light8" index="1"]
+light_energy = 10.0
+spot_range = 11.58806
+
+[node name="Ceiling Light9" parent="CSGBox3D2" instance=ExtResource("3_j7g3k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -5)
+
+[node name="SpotLight3D" parent="CSGBox3D2/Ceiling Light9" index="1"]
+light_energy = 10.0
+spot_range = 11.58806
+
+[node name="Ceiling Light10" parent="CSGBox3D2" instance=ExtResource("3_j7g3k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -5)
+
+[node name="SpotLight3D" parent="CSGBox3D2/Ceiling Light10" index="1"]
+light_energy = 10.0
+spot_range = 11.58806
+
+[node name="Ceiling Light5" parent="CSGBox3D2" instance=ExtResource("3_j7g3k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -11)
+
+[node name="SpotLight3D" parent="CSGBox3D2/Ceiling Light5" index="1"]
+light_energy = 10.0
+spot_range = 11.58806
+
+[node name="Ceiling Light6" parent="CSGBox3D2" instance=ExtResource("3_j7g3k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 10)
+
+[node name="SpotLight3D" parent="CSGBox3D2/Ceiling Light6" index="1"]
+light_energy = 10.0
+spot_range = 11.58806
+
+[node name="button_large" parent="CSGBox3D2" instance=ExtResource("3_8ell3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.986312, -9.950001, -8.113567)
+
+[node name="audioTrigger" parent="CSGBox3D2" instance=ExtResource("15_a15vq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.651143, -3.994444, 4.624017)
+sound = ExtResource("5_bt4d6")
+speaker = NodePath("../speaker")
+
+[node name="CollisionShape3D" parent="CSGBox3D2/audioTrigger/Area3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1081543, 1.7766113, 0)
+shape = SubResource("BoxShape3D_uogfn")
+
+[node name="speaker" parent="CSGBox3D2" instance=ExtResource("17_uuc3c")]
+transform = Transform3D(0.70710677, -0.70710677, -3.090862e-08, 0, -4.371139e-08, 1, -0.70710677, -0.70710677, -3.090862e-08, 7.3960094, -1.9740486, 14.486635)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="."]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -9, 2.5, -8.6)
+size = Vector3(10, 5, 0.1)
+material = ExtResource("1_bxlid")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -1, 5, 0)
+use_collision = true
+size = Vector3(30, 10, 0.15)
+material = ExtResource("1_bxlid")
+
+[node name="CSGCombiner3D2" parent="CSGBox3D4" instance=ExtResource("3_b4jjj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6559829, -4.9454226, -0.011660576)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 15, 5, 0)
+use_collision = true
+size = Vector3(30, 10, 0.15)
+material = ExtResource("1_bxlid")
+
+[node name="CSGCombiner3D" parent="CSGBox3D5" instance=ExtResource("3_b4jjj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.75666773, 1.0055561, 0.0018730164)
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 5, -15)
+use_collision = true
+size = Vector3(16, 10, 0.1)
+material = ExtResource("1_bxlid")
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 5, 15)
+use_collision = true
+size = Vector3(16, 10, 0.1)
+material = ExtResource("1_bxlid")
+
+[node name="CSGBox3D11" type="CSGBox3D" parent="."]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -6.0000005, 2.5, 1.3999996)
+use_collision = true
+size = Vector3(10, 5, 0.1)
+material = ExtResource("1_bxlid")
+
+[node name="CSGBox3D12" type="CSGBox3D" parent="."]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -4, 2.5, -2.6000006)
+use_collision = true
+size = Vector3(6, 5, 0.1)
+material = ExtResource("1_bxlid")
+
+[node name="CSGBox3D9" type="CSGBox3D" parent="."]
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, -7, 2.5, -5.6000004)
+use_collision = true
+size = Vector3(6, 5, 0.1)
+material = ExtResource("1_bxlid")
+
+[node name="CSGBox3D10" type="CSGBox3D" parent="."]
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, -11, 2.5, -3.6000004)
+use_collision = true
+size = Vector3(10, 5, 0.1)
+material = ExtResource("1_bxlid")
+
+[node name="CSGBox3D13" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 4, -3.5)
+material_override = SubResource("StandardMaterial3D_j7g3k")
+use_collision = true
+size = Vector3(12, 0.1, 11)
+material = ExtResource("1_bxlid")
+
+[node name="Ceiling Light7" parent="." instance=ExtResource("3_j7g3k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.0755906, 3.9201741, -0.43652344)
+
+[node name="Ceiling Light8" parent="." instance=ExtResource("3_j7g3k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.166681, 3.8940184, -4.5083838)
+
+[node name="env" parent="." instance=ExtResource("5_xisn3")]
+
+[node name="Door_Enter" parent="." instance=ExtResource("6_3jweh")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -0.99861634, 0.05457735, -0.6559829)
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 1, -13)
+material_override = ExtResource("1_bxlid")
+use_collision = true
+size = Vector3(3, 2, 3)
+
+[node name="CSGBox3D14" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 2.0050564, -13)
+material_override = ExtResource("1_7q6ti")
+use_collision = true
+size = Vector3(3, 0.001, 3)
+
+[node name="CSGBox3D15" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 2, -13.5)
+material_override = ExtResource("1_bxlid")
+use_collision = true
+size = Vector3(3, 4, 4)
+
+[node name="CSGBox3D16" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 4.0050564, -13.5)
+material_override = ExtResource("1_7q6ti")
+use_collision = true
+size = Vector3(3, 0.001, 4)
+
+[node name="CSGBox3D17" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 3, -10)
+material_override = ExtResource("1_bxlid")
+use_collision = true
+size = Vector3(3, 6, 3)
+
+[node name="CSGBox3D18" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 6.0050564, -10)
+material_override = ExtResource("1_7q6ti")
+use_collision = true
+size = Vector3(3, 0.001, 3)
+
+[node name="CSGBox3D19" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 3, 0)
+material_override = ExtResource("1_bxlid")
+use_collision = true
+size = Vector3(5, 6, 31)
+
+[node name="CSGBox3D20" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 6.0050564, 0)
+material_override = ExtResource("1_7q6ti")
+use_collision = true
+size = Vector3(5, 0.001, 31)
+
+[node name="Checkpoint" parent="." instance=ExtResource("9_lduqk")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 1.353778, -0.043607354, -0.86929893)
+
+[node name="Checkpoint2" parent="." instance=ExtResource("9_lduqk")]
+transform = Transform3D(0.64, 0, 0, 0, -2.7975288e-08, 0.64, 0, -0.64, -2.7975288e-08, 8.931724, 3.9548807, -13.075871)
+
+[node name="button_large" parent="." instance=ExtResource("3_8ell3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.583155, 2.0055563, -12.675762)
+
+[node name="button_large2" parent="." instance=ExtResource("3_8ell3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.748523, 6.005556, -12.984659)
+
+[node name="Player_pawn" parent="." instance=ExtResource("11_wovge")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -4.804604, 0.47757605, -0.8093978)
+
+[node name="button_large3" parent="." instance=ExtResource("3_8ell3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.726778, 6.005556, 12.572178)
+
+[node name="Door_Exit" parent="." instance=ExtResource("12_mr6v0")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 14.998127, 6.005556, -0.75666773)
+buttons = Array[NodePath]([NodePath("../button_large3"), NodePath("../CSGBox3D2/button_large"), NodePath("../button_large"), NodePath("../button_large2")])
+
+[node name="corner" parent="." instance=ExtResource("16_uuc3c")]
+transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, 21.043663, 5.940935, 2)
+
+[node name="levelTriger" parent="corner" index="10"]
+next_scene = "res://maps/ct_2.tscn"
+
+[node name="audioTrigger" parent="." instance=ExtResource("15_a15vq")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 1.353778, -0.043607354, -0.86929893)
+sound = ExtResource("16_dt2hs")
+speaker = NodePath("../speaker")
+
+[node name="CollisionShape3D" parent="audioTrigger/Area3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.59716797, -0.17962652, 1.2471313)
+shape = SubResource("BoxShape3D_dt2hs")
+
+[node name="speaker" parent="." instance=ExtResource("17_uuc3c")]
+transform = Transform3D(0.70710677, -0.70710677, 3.090862e-08, 0, -4.371139e-08, -1, 0.70710677, 0.70710677, -3.090862e-08, 7.36182, 1.7522966, -11.316231)
+
+[node name="plush" parent="." instance=ExtResource("17_bt4d6")]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 4.9603014, 0.24521092, -14.727152)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("18_bt4d6")
+autoplay = true
+bus = &"Music"
+
+[editable path="CSGBox3D2/Ceiling Light"]
+[editable path="CSGBox3D2/Ceiling Light3"]
+[editable path="CSGBox3D2/Ceiling Light2"]
+[editable path="CSGBox3D2/Ceiling Light4"]
+[editable path="CSGBox3D2/Ceiling Light7"]
+[editable path="CSGBox3D2/Ceiling Light8"]
+[editable path="CSGBox3D2/Ceiling Light9"]
+[editable path="CSGBox3D2/Ceiling Light10"]
+[editable path="CSGBox3D2/Ceiling Light5"]
+[editable path="CSGBox3D2/Ceiling Light6"]
+[editable path="CSGBox3D2/audioTrigger"]
+[editable path="corner"]
+[editable path="corner/levelTriger"]
+[editable path="audioTrigger"]
