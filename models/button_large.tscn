@@ -144,6 +144,7 @@ shape = SubResource("CylinderShape3D_5lf25")
 libraries = {
 &"": SubResource("AnimationLibrary_mkwvs")
 }
+speed_scale = 4.0
 
 [node name="AnimationTree" type="AnimationTree" parent="." index="2"]
 tree_root = SubResource("AnimationNodeStateMachine_fejpa")

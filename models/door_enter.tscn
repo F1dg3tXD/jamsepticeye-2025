@@ -1,0 +1,211 @@
+[gd_scene load_steps=20 format=3 uid="uid://xsg4uqdy2r2k"]
+
+[ext_resource type="PackedScene" uid="uid://7ggysrtwu6kj" path="res://models/props/door_exit/Door_Exit.glb" id="1_r21cx"]
+[ext_resource type="Script" uid="uid://fbkxk7swy6l2" path="res://models/door_enter.gd" id="2_27whl"]
+[ext_resource type="PackedScene" uid="uid://bayhjq7qqt3qp" path="res://models/door_hole.tscn" id="2_xmukn"]
+[ext_resource type="AnimationLibrary" uid="uid://jy2x1d7hvxvo" path="res://models/door_anims.res" id="3_36bcr"]
+[ext_resource type="Material" uid="uid://bhu040fge2wlc" path="res://models/door_mat.tres" id="3_bnli6"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_36bcr"]
+size = Vector3(2.4794922, 1.5964355, 0.13891602)
+
+[sub_resource type="Animation" id="Animation_3vjn2"]
+resource_name = "door_close"
+length = 0.33333334
+tracks/0/type = "position_3d"
+tracks/0/imported = true
+tracks/0/enabled = true
+tracks/0/path = NodePath("Armature/Skeleton3D:door_right")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 1.2551214, 1.1966895, -8.682649e-10, 0.033333335, 1, 1.2551214, 1.1966895, -8.682649e-10, 0.06666667, 1, 1.0590086, 1.1966895, -7.325986e-10, 0.13333334, 1, 0.19611263, 1.1966895, -1.35667e-10, 0.16666667, 1, -1.4317775e-19, 1.1966895, -7.916066e-16, 0.33333334, 1, -1.4317775e-19, 1.1966895, -7.916066e-16)
+tracks/1/type = "position_3d"
+tracks/1/imported = true
+tracks/1/enabled = true
+tracks/1/path = NodePath("Armature/Skeleton3D:door_left")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, -1.9787233, 1.1966895, 1.3688417e-09, 0.033333335, 1, -1.9787233, 1.1966895, 1.3688417e-09, 0.06666667, 1, -1.8330169, 1.1966895, 1.2680453e-09, 0.13333334, 1, -1.1919081, 1.1966895, 8.24541e-10, 0.16666667, 1, -1.0462017, 1.1966895, 7.237446e-10, 0.33333334, 1, -1.0462017, 1.1966895, 7.237446e-10)
+tracks/2/type = "rotation_3d"
+tracks/2/imported = true
+tracks/2/enabled = true
+tracks/2/path = NodePath("Armature/Skeleton3D:door_lock")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(0, 1, 0.2705982, 0.6532815, 0.6532815, 0.27059793, 0.16666667, 1, 0.2705982, 0.6532815, 0.6532815, 0.27059793, 0.2, 1, 0.3739927, 0.600108, 0.60010785, 0.37399247, 0.23333333, 1, 0.5493496, 0.44521365, 0.44521344, 0.5493495, 0.26666668, 1, 0.616498, 0.34630972, 0.34630948, 0.6164978, 0.3, 1, 0.5626701, 0.4282552, 0.42825496, 0.56267, 0.33333334, 1, 0.5000001, 0.50000006, 0.49999994, 0.49999994)
+
+[sub_resource type="Animation" id="Animation_o0hv2"]
+resource_name = "door_open"
+length = 0.33333334
+tracks/0/type = "position_3d"
+tracks/0/imported = true
+tracks/0/enabled = true
+tracks/0/path = NodePath("Armature/Skeleton3D:door_right")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, -1.4317775e-19, 1.1966895, -7.916066e-16, 0.2, 1, -1.4317775e-19, 1.1966895, -7.916066e-16, 0.23333333, 1, 0.19611266, 1.1966895, -1.3566702e-10, 0.3, 1, 1.0590087, 1.1966895, -7.325987e-10, 0.33333334, 1, 1.2551214, 1.1966895, -8.682649e-10)
+tracks/1/type = "position_3d"
+tracks/1/imported = true
+tracks/1/enabled = true
+tracks/1/path = NodePath("Armature/Skeleton3D:door_left")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, -1.0462017, 1.1966895, 7.237446e-10, 0.2, 1, -1.0462017, 1.1966895, 7.237446e-10, 0.23333333, 1, -1.1919081, 1.1966895, 8.24541e-10, 0.3, 1, -1.8330168, 1.1966895, 1.2680452e-09, 0.33333334, 1, -1.9787233, 1.1966895, 1.3688417e-09)
+tracks/2/type = "rotation_3d"
+tracks/2/imported = true
+tracks/2/enabled = true
+tracks/2/path = NodePath("Armature/Skeleton3D:door_lock")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(0, 1, 0.5000001, 0.50000006, 0.49999994, 0.49999994, 0.033333335, 1, 0.5000001, 0.50000006, 0.49999994, 0.49999994, 0.06666667, 1, 0.47955605, 0.51964045, 0.5196403, 0.47955585, 0.1, 1, 0.42672524, 0.5638313, 0.56383115, 0.426725, 0.13333334, 1, 0.35761166, 0.61001164, 0.6100114, 0.35761142, 0.16666667, 1, 0.2965671, 0.6419097, 0.64190966, 0.29656684, 0.2, 1, 0.2705982, 0.6532815, 0.6532815, 0.27059793, 0.33333334, 1, 0.2705982, 0.6532815, 0.6532815, 0.27059793)
+
+[sub_resource type="Animation" id="Animation_2pa0l"]
+resource_name = "Pressed"
+tracks/0/type = "position_3d"
+tracks/0/imported = true
+tracks/0/enabled = true
+tracks/0/path = NodePath("Armature/Skeleton3D:door_right")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, -1.4317775e-19, 1.1966895, -7.916066e-16)
+tracks/1/type = "position_3d"
+tracks/1/imported = true
+tracks/1/enabled = true
+tracks/1/path = NodePath("Armature/Skeleton3D:door_left")
+tracks/1/interp = 0
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, -1.0462017, 1.1966895, 7.237446e-10)
+tracks/2/type = "rotation_3d"
+tracks/2/imported = true
+tracks/2/enabled = true
+tracks/2/path = NodePath("Armature/Skeleton3D:door_lock")
+tracks/2/interp = 0
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(0, 1, 0.5000001, 0.50000006, 0.49999994, 0.49999994)
+
+[sub_resource type="Animation" id="Animation_88apq"]
+resource_name = "Released"
+tracks/0/type = "position_3d"
+tracks/0/imported = true
+tracks/0/enabled = true
+tracks/0/path = NodePath("Armature/Skeleton3D:door_right")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, -1.4317775e-19, 1.1966895, -7.916066e-16)
+tracks/1/type = "position_3d"
+tracks/1/imported = true
+tracks/1/enabled = true
+tracks/1/path = NodePath("Armature/Skeleton3D:door_left")
+tracks/1/interp = 0
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, -1.0462017, 1.1966895, 7.237446e-10)
+tracks/2/type = "rotation_3d"
+tracks/2/imported = true
+tracks/2/enabled = true
+tracks/2/path = NodePath("Armature/Skeleton3D:door_lock")
+tracks/2/interp = 0
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(0, 1, 0.5000001, 0.50000006, 0.49999994, 0.49999994)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nknj1"]
+_data = {
+&"Pressed": SubResource("Animation_2pa0l"),
+&"Released": SubResource("Animation_88apq"),
+&"door_close": SubResource("Animation_3vjn2"),
+&"door_open": SubResource("Animation_o0hv2")
+}
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_bnli6"]
+animation = &"door_anims/door_close"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_pv20e"]
+animation = &"door_anims/door_open"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_vhwwr"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_07sgx"]
+advance_mode = 2
+advance_condition = &"isOpen"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_7oh7j"]
+advance_mode = 2
+advance_condition = &"!isOpen"
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_27whl"]
+states/door_anims_door_close/node = SubResource("AnimationNodeAnimation_bnli6")
+states/door_anims_door_close/position = Vector2(358, 104)
+states/door_anims_door_open/node = SubResource("AnimationNodeAnimation_pv20e")
+states/door_anims_door_open/position = Vector2(610, 104)
+transitions = ["Start", "door_anims_door_close", SubResource("AnimationNodeStateMachineTransition_vhwwr"), "door_anims_door_close", "door_anims_door_open", SubResource("AnimationNodeStateMachineTransition_07sgx"), "door_anims_door_open", "door_anims_door_close", SubResource("AnimationNodeStateMachineTransition_7oh7j")]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xmukn"]
+size = Vector3(2.7890625, 2.440918, 3.1480713)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bnli6"]
+size = Vector3(3.1357422, 2.4346924, 1.3690186)
+
+[node name="Door_Enter" instance=ExtResource("1_r21cx")]
+script = ExtResource("2_27whl")
+
+[node name="door" parent="Armature/Skeleton3D" index="0"]
+surface_material_override/0 = ExtResource("3_bnli6")
+
+[node name="BoneAttachment3D" type="BoneAttachment3D" parent="Armature/Skeleton3D" index="1"]
+transform = Transform3D(6.917773e-10, 1, -7.660539e-15, 1, -6.91777e-10, -3.9019267e-07, -3.9019267e-07, -7.382983e-15, -1, -1.0462017, 1.1966895, -1.0348028e-10)
+bone_name = "door_left"
+bone_idx = 2
+
+[node name="RigidBody3D" type="RigidBody3D" parent="Armature/Skeleton3D/BoneAttachment3D" index="0"]
+transform = Transform3D(1, 2.880786e-21, 0, 2.8837627e-21, 1, 0, 0, 0, 1, 0.078469634, 1.012126, -3.061828e-08)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Armature/Skeleton3D/BoneAttachment3D/RigidBody3D" index="0"]
+transform = Transform3D(1, -2.8950854e-22, 0, 2.4730714e-22, 1, 0, 0, 0, 1, -0.03515625, -0.76655185, 7.1054274e-14)
+shape = SubResource("BoxShape3D_36bcr")
+
+[node name="BoneAttachment3D2" type="BoneAttachment3D" parent="Armature/Skeleton3D" index="2"]
+transform = Transform3D(-6.917771e-10, 1, -3.2196468e-15, -1, -6.91777e-10, 7.558438e-08, 7.558438e-08, -3.8302694e-15, 1, 8.278423e-10, 1.1966895, -1.0348029e-10)
+bone_name = "door_right"
+bone_idx = 1
+
+[node name="RigidBody3D" type="RigidBody3D" parent="Armature/Skeleton3D/BoneAttachment3D2" index="0"]
+transform = Transform3D(1, -2.8950854e-22, 0, 2.4730714e-22, 1, 0, 0, 0, 1, -0.015517473, 1.562753, 1.1728929e-09)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Armature/Skeleton3D/BoneAttachment3D2/RigidBody3D" index="0"]
+transform = Transform3D(1, -2.8950854e-22, 0, 2.4730714e-22, 1, 0, 0, 0, 1, -0.03515625, -0.76655185, 7.1054274e-14)
+shape = SubResource("BoxShape3D_36bcr")
+
+[node name="AnimationPlayer" parent="." index="1"]
+libraries = {
+&"": SubResource("AnimationLibrary_nknj1"),
+&"door_anims": ExtResource("3_36bcr")
+}
+
+[node name="AnimationTree" type="AnimationTree" parent="." index="2"]
+tree_root = SubResource("AnimationNodeStateMachine_27whl")
+anim_player = NodePath("../AnimationPlayer")
+parameters/conditions/!isOpen = false
+parameters/conditions/isOpen = false
+
+[node name="Area3D" type="Area3D" parent="." index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.2662785)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.220459, 0.41485596)
+shape = SubResource("BoxShape3D_xmukn")
+
+[node name="CSGCombiner3D" parent="." index="4" instance=ExtResource("2_xmukn")]
+visible = false
+
+[node name="entered" type="Node3D" parent="." index="5"]
+
+[node name="Area3D2" type="Area3D" parent="entered" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -1)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="entered/Area3D2" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.22125244, 0.18450928)
+shape = SubResource("BoxShape3D_bnli6")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]
+[connection signal="body_entered" from="entered/Area3D2" to="." method="_on_area_3d_2_body_entered"]

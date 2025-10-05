@@ -4,7 +4,7 @@
 operation = 2
 
 [node name="CSGCylinder3D" type="CSGCylinder3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0.4399323, -0.48990393)
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0.85829437, -0.48990393)
 radius = 1.5415039
 height = 1.9135742
 sides = 32

@@ -24,27 +24,33 @@ shape = SubResource("CapsuleShape3D_j6vuq")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25, 0)
 
 [node name="Skeleton3D" parent="player/Armature" index="0"]
-bones/1/rotation = Quaternion(-0.014218222, 0.05730719, 0.029898671, 0.99780756)
-bones/2/rotation = Quaternion(0.022982595, 0.06816424, 0.0026221487, 0.997406)
-bones/3/rotation = Quaternion(0.023598323, 0.06828083, 0.00095195137, 0.9973865)
-bones/4/rotation = Quaternion(0.138511, 0.064386584, -0.029127551, 0.98783636)
-bones/5/rotation = Quaternion(0.0057577733, 0.17384145, 0.07176669, 0.9821383)
-bones/7/rotation = Quaternion(-0.5544981, -0.45507562, 0.58979607, -0.37091607)
-bones/8/rotation = Quaternion(0.19758822, -0.18946844, 0.4339669, 0.85833174)
-bones/9/rotation = Quaternion(-0.07792885, 0.007271115, 0.65437293, 0.7521106)
-bones/10/rotation = Quaternion(-0.12050935, -0.44767064, -0.39323798, 0.7939978)
-bones/31/rotation = Quaternion(0.4481831, -0.41317508, 0.5589506, 0.56213206)
-bones/32/rotation = Quaternion(0.35217974, 0.06506481, -0.77282864, 0.5239008)
-bones/33/rotation = Quaternion(-0.024324857, -0.008954474, -0.25741264, 0.9659539)
-bones/34/rotation = Quaternion(-0.1717089, 0.4403977, 0.22199751, 0.85280895)
-bones/55/rotation = Quaternion(0.12588911, 0.25288013, 0.94449574, -0.16772413)
-bones/56/rotation = Quaternion(-0.26368573, -0.08216842, 0.028315216, 0.96068543)
-bones/57/rotation = Quaternion(0.4548926, -0.081641056, -0.027846893, 0.8863589)
-bones/60/rotation = Quaternion(-0.12539262, 0.12000859, 0.9831298, 0.057710774)
-bones/61/rotation = Quaternion(-0.2278055, -0.074579425, -0.0015355196, 0.9708451)
-bones/62/rotation = Quaternion(0.5444943, 0.12729636, 0.045622297, 0.8277924)
+bones/1/rotation = Quaternion(-0.014914865, 0.05811606, 0.029610358, 0.99775916)
+bones/2/rotation = Quaternion(0.022692766, 0.068330914, 0.0027960835, 0.99740076)
+bones/3/rotation = Quaternion(0.023323866, 0.06841542, 0.0011894244, 0.99738353)
+bones/4/rotation = Quaternion(0.13966914, 0.06427846, -0.029083174, 0.9876816)
+bones/5/rotation = Quaternion(0.0068027135, 0.17305878, 0.0716544, 0.982278)
+bones/7/rotation = Quaternion(-0.5539725, -0.4557339, 0.5880878, -0.37359586)
+bones/8/rotation = Quaternion(0.19587895, -0.18741305, 0.43168262, 0.8603243)
+bones/9/rotation = Quaternion(-0.07770944, 0.007286785, 0.65253145, 0.7537313)
+bones/10/rotation = Quaternion(-0.12666504, -0.45432377, -0.38136864, 0.7950496)
+bones/31/rotation = Quaternion(0.44592085, -0.41479757, 0.5584709, 0.56321204)
+bones/32/rotation = Quaternion(0.34915632, 0.06623118, -0.77681875, 0.51986134)
+bones/33/rotation = Quaternion(-0.023366515, -0.00897923, -0.2472718, 0.9686228)
+bones/34/rotation = Quaternion(-0.17165492, 0.44109276, 0.20948447, 0.85562146)
+bones/55/rotation = Quaternion(0.12537946, 0.2481029, 0.9462288, -0.1654575)
+bones/56/rotation = Quaternion(-0.2566895, -0.08328387, 0.027794277, 0.9624978)
+bones/57/rotation = Quaternion(0.45312458, -0.08070356, -0.027183808, 0.8873704)
+bones/60/rotation = Quaternion(-0.12640372, 0.114119746, 0.98364806, 0.05861276)
+bones/61/rotation = Quaternion(-0.21880913, -0.07430183, -0.002300023, 0.9729319)
+bones/62/rotation = Quaternion(0.5410982, 0.12813711, 0.04555095, 0.8298909)
 
 [node name="GEO-body_male_stylized" parent="player/Armature/Skeleton3D" index="0"]
+cast_shadow = 3
+
+[node name="BoneAttachment3D" parent="player/Armature/Skeleton3D" index="1"]
+transform = Transform3D(-0.0073826015, -0.16785783, 0.9857832, 0.022589192, 0.9855307, 0.16798422, -0.999717, 0.023508199, -0.0034838617, -0.08454008, 0.40707266, -1.3629446)
+
+[node name="freeze gun" parent="player/Armature/Skeleton3D/BoneAttachment3D/FreezeGun" index="0"]
 cast_shadow = 3
 
 [node name="Head" type="Node3D" parent="."]
@@ -74,7 +80,7 @@ transform = Transform3D(0.9956308, 0.011553823, 0.09265984, -0.01150411, 0.99993
 [node name="FreezeGun" parent="Head/Hand" instance=ExtResource("5_kfe1x")]
 
 [node name="freeze gun" parent="Head/Hand/FreezeGun" index="0"]
-transform = Transform3D(-1, 1.5655727e-08, -1.4585075e-07, -2.2626681e-08, 0.9659257, 0.25881907, 1.44933e-07, 0.25881904, -0.9659258, 0, 0, 0.31489235)
+transform = Transform3D(-1, 1.5655724e-08, -1.4585075e-07, -2.2626681e-08, 0.9659255, 0.25881907, 1.44933e-07, 0.25881898, -0.9659258, 0, 0, 0.31489235)
 
 [node name="PauseMenuController" parent="." instance=ExtResource("3_xb0lg")]
 
@@ -107,4 +113,5 @@ grow_vertical = 2
 texture = ExtResource("7_lygmr")
 
 [editable path="player"]
+[editable path="player/Armature/Skeleton3D/BoneAttachment3D/FreezeGun"]
 [editable path="Head/Hand/FreezeGun"]
