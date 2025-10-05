@@ -76,7 +76,7 @@ offset_left = -88.0
 offset_top = -26.0
 grow_horizontal = 0
 grow_vertical = 0
-text = "v0.01b"
+text = "v0.02a"
 horizontal_alignment = 2
 script = ExtResource("6_bqpce")
 

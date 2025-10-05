@@ -298,6 +298,7 @@ transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 4.9603014, 0.24521092, 
 stream = ExtResource("18_bt4d6")
 autoplay = true
 bus = &"Music"
+parameters/looping = false
 
 [editable path="CSGBox3D2/Ceiling Light"]
 [editable path="CSGBox3D2/Ceiling Light3"]

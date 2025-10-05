@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://d2m2ycuy73gxj"]
+[gd_scene load_steps=10 format=3 uid="uid://d2m2ycuy73gxj"]
 
 [ext_resource type="Material" uid="uid://be30lkumhxcb3" path="res://materials/ct_wall.tres" id="1_meof3"]
 [ext_resource type="Texture2D" uid="uid://db2g7ow60rmlf" path="res://addons/kenney_prototype-textures/PNG/Green/texture_09.png" id="2_xo6ln"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://t0upe6f63563" path="res://models/ceiling_light.tscn" id="4_8g7w2"]
 [ext_resource type="PackedScene" uid="uid://7ggysrtwu6kj" path="res://models/props/door_exit/Door_Exit.glb" id="5_k81x3"]
 [ext_resource type="PackedScene" uid="uid://cuxwh388dtqkh" path="res://models/level_triger.tscn" id="6_3vhig"]
+[ext_resource type="Material" uid="uid://bhu040fge2wlc" path="res://models/door_mat.tres" id="6_xo6ln"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j7g3k"]
 albedo_texture = ExtResource("2_xo6ln")
@@ -68,6 +69,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9476547, 3.8940182, -1.110
 [node name="Door_Exit_fake" parent="." instance=ExtResource("5_k81x3")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -1.94627, 0.05000019, -5.020095)
 
+[node name="door" parent="Door_Exit_fake/Armature/Skeleton3D" index="0"]
+surface_material_override/0 = ExtResource("6_xo6ln")
+
 [node name="levelTriger" parent="." instance=ExtResource("6_3vhig")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
 
@@ -75,4 +79,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 shape = SubResource("BoxShape3D_2syob")
 
+[editable path="Door_Exit_fake"]
 [editable path="levelTriger"]

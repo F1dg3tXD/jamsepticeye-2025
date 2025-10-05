@@ -149,15 +149,15 @@ size = Vector3(3.1357422, 2.4346924, 1.3690186)
 script = ExtResource("2_27whl")
 
 [node name="Skeleton3D" parent="Armature" index="0"]
-bones/1/position = Vector3(-1.4317775e-19, 1.1966895, -7.916066e-16)
-bones/2/position = Vector3(-1.0462017, 1.1966895, 7.237446e-10)
-bones/3/rotation = Quaternion(0.5000002, 0.50000006, 0.49999997, 0.49999997)
+bones/1/position = Vector3(1.2551214, 1.1966895, -8.682649e-10)
+bones/2/position = Vector3(-1.9787233, 1.1966895, 1.3688417e-09)
+bones/3/rotation = Quaternion(0.27059823, 0.6532815, 0.65328145, 0.27059796)
 
 [node name="door" parent="Armature/Skeleton3D" index="0"]
 surface_material_override/0 = ExtResource("3_bnli6")
 
 [node name="BoneAttachment3D" type="BoneAttachment3D" parent="Armature/Skeleton3D" index="1"]
-transform = Transform3D(6.917773e-10, 1, -7.660539e-15, 1, -6.91777e-10, -3.9019267e-07, -3.9019267e-07, -7.382983e-15, -1, -1.0462017, 1.1966895, -1.0347395e-10)
+transform = Transform3D(6.917773e-10, 1, -7.660539e-15, 1, -6.91777e-10, -3.9019267e-07, -3.9019267e-07, -7.382983e-15, -1, -1.9787233, 1.1966895, -1.03473896e-10)
 bone_name = "door_left"
 bone_idx = 2
 
@@ -169,7 +169,7 @@ transform = Transform3D(1, -2.8950854e-22, 0, 2.4730714e-22, 1, 0, 0, 0, 1, -0.0
 shape = SubResource("BoxShape3D_36bcr")
 
 [node name="BoneAttachment3D2" type="BoneAttachment3D" parent="Armature/Skeleton3D" index="2"]
-transform = Transform3D(-6.917771e-10, 1, -3.2196468e-15, -1, -6.91777e-10, 7.558438e-08, 7.558438e-08, -3.8302694e-15, 1, 8.278423e-10, 1.1966895, -1.0348108e-10)
+transform = Transform3D(-6.917771e-10, 1, -3.2196468e-15, -1, -6.91777e-10, 7.558438e-08, 7.558438e-08, -3.8302694e-15, 1, 1.2551214, 1.1966895, -1.0348106e-10)
 bone_name = "door_right"
 bone_idx = 1
 
@@ -210,6 +210,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -1)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="entered/Area3D2" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.22125244, 0.18450928)
 shape = SubResource("BoxShape3D_bnli6")
+
+[node name="DoorSounds" type="AudioStreamPlayer3D" parent="." index="6"]
+volume_db = -10.0
+bus = &"SFX"
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]

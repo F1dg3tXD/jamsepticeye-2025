@@ -1,10 +1,11 @@
-[gd_scene load_steps=14 format=3 uid="uid://djfv422o6fc2w"]
+[gd_scene load_steps=15 format=3 uid="uid://djfv422o6fc2w"]
 
 [ext_resource type="PackedScene" uid="uid://bkpngcwosde0f" path="res://models/props/FreezeGun/FreezeGun.glb" id="1_0dhnf"]
 [ext_resource type="Texture2D" uid="uid://dtq5sso7gogk4" path="res://models/props/FreezeGun/FreezeGun_FreezeGun_D.png" id="2_jcty0"]
 [ext_resource type="Texture2D" uid="uid://bn01rvojwrwfs" path="res://models/props/FreezeGun/FreezeGun_FreezeGun_R.png" id="3_xjmyw"]
 [ext_resource type="Material" uid="uid://bk4qag1x33jn3" path="res://materials/ice_mat.tres" id="4_ima16"]
 [ext_resource type="Material" uid="uid://bqhovn4afd53f" path="res://materials/fire.tres" id="4_xjmyw"]
+[ext_resource type="AudioStream" uid="uid://carvsy35vi70t" path="res://sounds/sfx/air-condition-motor-noise-27701.mp3" id="6_oylwn"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ima16"]
 albedo_texture = ExtResource("2_jcty0")
@@ -35,7 +36,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.53333336),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0, 0, 0.31489235)]
+"values": [Vector3(0, 0, 0), Vector3(0.25, 0, 0.315)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -61,10 +62,40 @@ tracks/2/keys = {
 "update": 1,
 "values": [false, true, false]
 }
+tracks/3/type = "audio"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("FreezeGunAudio")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"clips": [{
+"end_offset": 16.85,
+"start_offset": 0.4192,
+"stream": ExtResource("6_oylwn")
+}],
+"times": PackedFloat32Array(0.4)
+}
+tracks/3/use_blend = true
 
 [sub_resource type="Animation" id="Animation_ima16"]
 resource_name = "Grab"
 loop_mode = 1
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FreezeGunAudio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 16.85,
+"start_offset": 0.0,
+"stream": ExtResource("6_oylwn")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/0/use_blend = true
 
 [sub_resource type="Animation" id="Animation_oylwn"]
 resource_name = "Idle"
@@ -156,7 +187,7 @@ _data = {
 [node name="FreezeGun" instance=ExtResource("1_0dhnf")]
 
 [node name="freeze gun" parent="." index="0"]
-transform = Transform3D(-1, 1.5655727e-08, -1.4585075e-07, -2.2626681e-08, 0.9659257, 0.25881907, 1.44933e-07, 0.25881904, -0.9659258, 0, 0, 0.31489235)
+transform = Transform3D(-1, 1.5655726e-08, -1.4585075e-07, -2.2626681e-08, 0.96592563, 0.25881907, 1.44933e-07, 0.258819, -0.9659258, 0, 0, 0.31489235)
 cast_shadow = 0
 surface_material_override/0 = SubResource("StandardMaterial3D_ima16")
 
@@ -187,3 +218,6 @@ initial_velocity_max = 1.0
 libraries = {
 &"": SubResource("AnimationLibrary_ima16")
 }
+
+[node name="FreezeGunAudio" type="AudioStreamPlayer3D" parent="." index="2"]
+volume_db = -10.0

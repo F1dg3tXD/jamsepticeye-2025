@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://cr2gt7wik51m7"]
+[gd_scene load_steps=27 format=3 uid="uid://cr2gt7wik51m7"]
 
 [ext_resource type="Material" uid="uid://be30lkumhxcb3" path="res://materials/ct_wall.tres" id="1_3dmix"]
 [ext_resource type="Texture2D" uid="uid://db2g7ow60rmlf" path="res://addons/kenney_prototype-textures/PNG/Green/texture_09.png" id="2_00yil"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://big633a15qrjk" path="res://models/arrow.tscn" id="8_j75el"]
 [ext_resource type="PackedScene" uid="uid://gt823aisyh37" path="res://models/door_exit.tscn" id="8_jmkeo"]
 [ext_resource type="PackedScene" uid="uid://dk4qxqjes3n65" path="res://models/checkpoint.tscn" id="8_wfgpi"]
+[ext_resource type="PackedScene" uid="uid://cfqfw8aunju78" path="res://models/f1dg3t_head.tscn" id="9_w780i"]
 [ext_resource type="PackedScene" uid="uid://ctt4gweqtowtk" path="res://models/button_large.tscn" id="11_w8mq2"]
 [ext_resource type="PackedScene" uid="uid://ty7uuwhj4mbi" path="res://models/audioTrigger.tscn" id="14_quwip"]
 [ext_resource type="AudioStream" uid="uid://dhgbj81v66k3i" path="res://sounds/vo/ct_2_intro.mp3" id="15_i33jr"]
@@ -19,6 +20,8 @@
 [ext_resource type="AudioStream" uid="uid://dy58n431jy6cc" path="res://sounds/vo/ct_2_end.mp3" id="17_x7myn"]
 [ext_resource type="AudioStream" uid="uid://fr5qvphlcv58" path="res://sounds/music/＂Portal 2＂ Mysterious Space Background Music No Copyright [X_h0ESSNe8E].mp3" id="18_1wbbb"]
 [ext_resource type="PackedScene" uid="uid://cuxwh388dtqkh" path="res://models/level_triger.tscn" id="19_w6c6i"]
+[ext_resource type="PackedScene" uid="uid://ds6bb6g86fdqx" path="res://models/props/godot_plush_model/plush.tscn" id="20_rw2u0"]
+[ext_resource type="Script" uid="uid://cfofwe47icgw2" path="res://maps/ct_2_physics_pause.gd" id="21_6bved"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j7g3k"]
 albedo_texture = ExtResource("2_00yil")
@@ -210,6 +213,25 @@ use_collision = true
 size = Vector3(12, 0.1, 11)
 material = ExtResource("1_3dmix")
 
+[node name="CSGBox3D30" type="CSGBox3D" parent="."]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -24, 4.669806, 0)
+material_override = ExtResource("3_28gl7")
+use_collision = true
+size = Vector3(12, 1.4396118, 11)
+material = ExtResource("1_3dmix")
+
+[node name="CSGCombiner3D" parent="CSGBox3D30" instance=ExtResource("7_cqmno")]
+transform = Transform3D(-8.742278e-08, -1, 4.3711385e-08, 4.371139e-08, -4.371139e-08, -1, 1, -8.742278e-08, 4.3711385e-08, 0, -0.5387206, 0)
+
+[node name="Label3D" type="Label3D" parent="CSGBox3D30"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 2, 1.4440765, 1.7484558e-07)
+text = "Why?"
+font_size = 64
+outline_size = 24
+
+[node name="F1dg3t_head" parent="CSGBox3D30" instance=ExtResource("9_w780i")]
+transform = Transform3D(0.25881898, -2.2626685e-08, -0.96592593, -0.25, 0.9659258, -0.0669873, 0.9330128, 0.25881907, 0.24999994, 6, -1.1910882, -3.5785298)
+
 [node name="env" parent="." instance=ExtResource("7_00yil")]
 
 [node name="Ceiling Light" parent="." instance=ExtResource("4_cqmno")]
@@ -284,6 +306,9 @@ transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -3.8
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("18_1wbbb")
+volume_db = -20.0
+autoplay = true
+parameters/looping = false
 
 [node name="levelTriger" parent="." instance=ExtResource("19_w6c6i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.15628, 0.049999833, -0.17913544)
@@ -293,6 +318,32 @@ next_scene = "res://UI_Test/scenes/end_credits/end_credits.tscn"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2444916, 0)
 shape = SubResource("BoxShape3D_rw2u0")
 
+[node name="button_large5" parent="." instance=ExtResource("11_w8mq2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.534483, 0.049999952, -2.6518362)
+
+[node name="Ceiling Light7" parent="." instance=ExtResource("4_cqmno")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.180262, 3.8434327, 1.7580206)
+
+[node name="Ceiling Light8" parent="." instance=ExtResource("4_cqmno")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.807886, 3.8434324, 2.4418132)
+
+[node name="Ceiling Light9" parent="." instance=ExtResource("4_cqmno")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.586632, 3.8434327, -3.1567445)
+
+[node name="Ceiling Light10" parent="." instance=ExtResource("4_cqmno")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.26246, 3.8434327, -2.1988127)
+
+[node name="plush" parent="." instance=ExtResource("20_rw2u0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.777704, 6.0840607, -0.19682685)
+script = ExtResource("21_6bved")
+
+[node name="Door_Exit2" parent="." instance=ExtResource("8_jmkeo")]
+transform = Transform3D(0, 1, -4.371139e-08, 4.371139e-08, -4.371139e-08, -1, -1, 0, -4.371138e-08, -24, 4.1918254, 0)
+buttons = Array[NodePath]([NodePath("../button_large5")])
+
+[connection signal="pressed_changed" from="button_large5" to="plush" method="_on_button_large_5_pressed_changed"]
+
 [editable path="audioTrigger"]
 [editable path="audioTrigger2"]
 [editable path="levelTriger"]
+[editable path="plush"]

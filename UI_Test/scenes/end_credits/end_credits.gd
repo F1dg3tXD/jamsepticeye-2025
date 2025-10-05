@@ -38,6 +38,7 @@ func _on_visibility_changed() -> void:
 		mouse_filter = init_mouse_filter
 
 func _ready() -> void:
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	visibility_changed.connect(_on_visibility_changed)
 	if get_main_menu_scene_path().is_empty():
 		menu_button.hide()

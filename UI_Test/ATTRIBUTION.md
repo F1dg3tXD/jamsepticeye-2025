@@ -6,10 +6,19 @@
 [F1dg3t](https://f1dg3t.itch.io)  
 
 ## Assets
+### Sounds
+
+#### - "Sci-Fi Doors" 
+Author: [freesound_community](https://pixabay.com/users/freesound_community-46691455)
+Source: [Sci-Fi Door Closing](https://pixabay.com/sound-effects/sci-fi-door-closing-94460)
+Source: [Sci-Fi Door Open](https://pixabay.com/sound-effects/sci-fi-door-open-47994)
+Source: [Air Condition Motor noise](https://pixabay.com/sound-effects/air-condition-motor-noise-27701)
+License: [CC0](https://pixabay.com/service/license-summary)
+
 ### Music
 
 #### - "Portal 2 Mysterious Space Background Music (No Copyright)"  
-Author: [Gravity Sound](https://www.youtube.com/@GravitySound)   
+Author: [Gravity Sound](https://www.youtube.com/@GravitySound)
 Source: [X_h0ESSNe8E](https://www.youtube.com/watch?v=X_h0ESSNe8E)
 License: [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/)
 
@@ -24,7 +33,6 @@ Source: [4vHVCmkrQN0](https://www.youtube.com/watch?v=ziFxpjRbfJc)
 License: [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/)
 
 ### Textures
-#### Level Editing
 Author: [Kenny](https://kenney.nl)  
 Source: [Domain : webpage.html](https://kenney.nl/assets/prototype-textures)  
 License: [CC0](https://creativecommons.org/publicdomain/zero/1.0/)

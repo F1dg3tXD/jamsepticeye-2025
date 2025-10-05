@@ -11,8 +11,8 @@ config_version=5
 [application]
 
 config/name="Corpse Tools"
-config/description="Freeze Yourself"
-config/version="0.02a"
+config/description="Go Freeze Yourself!"
+config/version="0.0.2b (Jamsepticeye)"
 run/main_scene="res://UI_Test/scenes/opening/opening_with_logo.tscn"
 config/features=PackedStringArray("4.5")
 boot_splash/image="uid://ceykrghbg84rn"
