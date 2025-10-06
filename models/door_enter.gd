@@ -1,14 +1,24 @@
 extends Node3D
 @onready var animation_tree: AnimationTree = $AnimationTree
 @onready var area_3d: Area3D = $Area3D
-@onready var area_3d_2: Area3D = $entered/Area3D2
+#@onready var area_3d_2: Area3D = $entered/Area3D2
 #@export var entered: bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	animation_tree.set("parameters/conditions/isOpen", false)
 	animation_tree.set("parameters/conditions/!isOpen", true)
-	area_3d.set_deferred("monitoring", true)
+	#
+	## Delay monitoring activation by one physics frame to avoid false triggers
+	#await get_tree().process_frame
+	#area_3d.set_deferred("monitoring", true)
+	
+	# If the player is already in the area, open the door
+	#for body in area_3d.get_overlapping_bodies():
+		#if body.is_in_group("player_pawn"):
+			#animation_tree.set("parameters/conditions/isOpen", true)
+			#animation_tree.set("parameters/conditions/!isOpen", false)
+			#break
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta: float) -> void:
@@ -25,12 +35,12 @@ func _on_area_3d_body_exited(body: Node3D) -> void:
 	if body.is_in_group("player_pawn"):
 		animation_tree.set("parameters/conditions/isOpen", false)
 		animation_tree.set("parameters/conditions/!isOpen", true)
-		await get_tree().create_timer(0.01).timeout
-		area_3d.set_deferred("monitoring", true)
+		await get_tree().create_timer(0.05).timeout
+		#area_3d.set_deferred("monitoring", true)
 	else:
 		animation_tree.set("parameters/conditions/isOpen", false)
 		animation_tree.set("parameters/conditions/!isOpen", true)
-		area_3d.set_deferred("monitoring", true)
+		#area_3d.set_deferred("monitoring", true)
 
 #func _on_area_3d_2_body_entered(body: Node3D) -> void:
 	#if body.is_in_group("player_pawn"):

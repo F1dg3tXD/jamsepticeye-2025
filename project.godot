@@ -153,4 +153,5 @@ copy_path="res://UI_Test/"
 
 [rendering]
 
+rendering_device/fallback_to_opengl3=false
 textures/vram_compression/import_etc2_astc=true

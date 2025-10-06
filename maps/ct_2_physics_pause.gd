@@ -11,5 +11,5 @@ func _ready() -> void:
 	#pass
 
 
-func _on_button_large_5_pressed_changed(pressed: bool) -> void:
+func _on_button_large_5_pressed_changed(_pressed: bool) -> void:
 	self.freeze = false
