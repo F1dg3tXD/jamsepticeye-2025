@@ -1,0 +1,193 @@
+[gd_scene load_steps=18 format=3 uid="uid://c6m7uh6rcvb60"]
+
+[ext_resource type="Material" uid="uid://be30lkumhxcb3" path="res://materials/ct_wall.tres" id="1_bl7k3"]
+[ext_resource type="PackedScene" uid="uid://bayhjq7qqt3qp" path="res://models/door_hole.tscn" id="2_gkvm7"]
+[ext_resource type="Texture2D" uid="uid://db2g7ow60rmlf" path="res://addons/kenney_prototype-textures/PNG/Green/texture_09.png" id="3_upb6p"]
+[ext_resource type="Material" uid="uid://chno48qqvah8f" path="res://materials/ct_floor.tres" id="4_6noeb"]
+[ext_resource type="PackedScene" uid="uid://t0upe6f63563" path="res://models/ceiling_light.tscn" id="5_ejoku"]
+[ext_resource type="PackedScene" uid="uid://7ggysrtwu6kj" path="res://models/props/door_exit/Door_Exit.glb" id="6_4nwh1"]
+[ext_resource type="Texture2D" uid="uid://bqp3t5mtyk7w8" path="res://models/props/door_exit/Door_Exit_Button_large_D.png" id="7_ch5v6"]
+[ext_resource type="Texture2D" uid="uid://b4bk0qtglwi6f" path="res://models/props/door_exit/Door_Exit_Button_large_E.png" id="8_ettl4"]
+[ext_resource type="Texture2D" uid="uid://kofqaw24hwj3" path="res://models/props/door_exit/Door_Exit_Button_large.png" id="9_lwst7"]
+[ext_resource type="PackedScene" uid="uid://xsg4uqdy2r2k" path="res://models/door_enter.tscn" id="10_bnqdd"]
+[ext_resource type="PackedScene" uid="uid://ctt4gweqtowtk" path="res://models/button_large.tscn" id="11_upb6p"]
+[ext_resource type="PackedScene" uid="uid://gt823aisyh37" path="res://models/door_exit.tscn" id="12_6noeb"]
+[ext_resource type="PackedScene" uid="uid://dk4qxqjes3n65" path="res://models/checkpoint.tscn" id="13_6noeb"]
+[ext_resource type="PackedScene" uid="uid://cdn2qjp2c1cw7" path="res://models/67.tscn" id="14_ejoku"]
+[ext_resource type="PackedScene" uid="uid://blstrvusmss87" path="res://Globals/Player_pawn.tscn" id="15_4nwh1"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rs2ev"]
+albedo_texture = ExtResource("3_upb6p")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mn63m"]
+albedo_texture = ExtResource("7_ch5v6")
+roughness_texture = ExtResource("9_lwst7")
+emission_enabled = true
+emission_energy_multiplier = 0.0
+emission_texture = ExtResource("8_ettl4")
+
+[node name="Godot" type="Node3D"]
+
+[node name="corner" type="Node3D" parent="."]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="corner"]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -2, 2.5, -5.1000004)
+use_collision = true
+size = Vector3(10, 5, 0.1)
+material = ExtResource("1_bl7k3")
+
+[node name="CSGBox3D11" type="CSGBox3D" parent="corner"]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 1, 2.5, 4.8999996)
+use_collision = true
+size = Vector3(10, 5, 0.1)
+material = ExtResource("1_bl7k3")
+
+[node name="CSGBox3D12" type="CSGBox3D" parent="corner"]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 3, 2.5, 0.8999996)
+use_collision = true
+size = Vector3(6, 5, 0.1)
+material = ExtResource("1_bl7k3")
+
+[node name="CSGBox3D9" type="CSGBox3D" parent="corner"]
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 0, 2.5, -2.1000004)
+use_collision = true
+size = Vector3(6, 5, 0.1)
+material = ExtResource("1_bl7k3")
+
+[node name="CSGBox3D16" type="CSGBox3D" parent="corner"]
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 6, 2.5, 2.9)
+use_collision = true
+size = Vector3(40, 5, 0.1)
+material = ExtResource("1_bl7k3")
+
+[node name="CSGCombiner3D2" parent="corner/CSGBox3D16" instance=ExtResource("2_gkvm7")]
+transform = Transform3D(-1, 0, -8.742276e-08, 0, 1, 0, 8.742276e-08, 0, -1, -0.010818481, -2.4785962, -0.0003733635)
+
+[node name="CSGBox3D17" type="CSGBox3D" parent="corner"]
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 21, 2.5, -5.0999985)
+use_collision = true
+size = Vector3(40, 5, 0.1)
+material = ExtResource("1_bl7k3")
+
+[node name="CSGBox3D18" type="CSGBox3D" parent="corner"]
+transform = Transform3D(1, 0, -1.7484555e-07, 0, 1, 0, 1.7484555e-07, 0, 1, 12.999999, 2.5, 5.9000006)
+use_collision = true
+size = Vector3(40, 5, 0.1)
+material = ExtResource("1_bl7k3")
+
+[node name="CSGBox3D19" type="CSGBox3D" parent="corner"]
+transform = Transform3D(1, 0, -1.7484555e-07, 0, 1, 0, 1.7484555e-07, 0, 1, 13.000002, 2.5, -17.099998)
+use_collision = true
+size = Vector3(40, 5, 0.1)
+material = ExtResource("1_bl7k3")
+
+[node name="CSGBox3D21" type="CSGBox3D" parent="corner"]
+transform = Transform3D(1, 0, -1.7484555e-07, 0, 1, 0, 1.7484555e-07, 0, 1, 13, 2.5, -2.0999992)
+use_collision = true
+size = Vector3(40, 5, 0.1)
+material = ExtResource("1_bl7k3")
+
+[node name="CSGCombiner3D" parent="corner/CSGBox3D21" instance=ExtResource("2_gkvm7")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 2.555171, -2.4499998, 0.001953125)
+
+[node name="CSGBox3D10" type="CSGBox3D" parent="corner"]
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, -4, 2.5, -0.10000038)
+use_collision = true
+size = Vector3(10, 5, 0.1)
+material = ExtResource("1_bl7k3")
+
+[node name="CSGBox3D15" type="CSGBox3D" parent="corner"]
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, -7, 2.5, 0)
+use_collision = true
+size = Vector3(12, 5, 0.1)
+material = ExtResource("1_bl7k3")
+
+[node name="CSGBox3D13" type="CSGBox3D" parent="corner"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
+material_override = SubResource("StandardMaterial3D_rs2ev")
+use_collision = true
+size = Vector3(12, 0.1, 11)
+material = ExtResource("1_bl7k3")
+
+[node name="CSGBox3D20" type="CSGBox3D" parent="corner"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.000001, 4, -6.4999986)
+material_override = SubResource("StandardMaterial3D_rs2ev")
+use_collision = true
+size = Vector3(16, 0.1, 27)
+material = ExtResource("1_bl7k3")
+
+[node name="CSGBox3D14" type="CSGBox3D" parent="corner"]
+material_override = ExtResource("4_6noeb")
+use_collision = true
+size = Vector3(100, 0.1, 100)
+material = ExtResource("1_bl7k3")
+
+[node name="Ceiling Light7" parent="corner" instance=ExtResource("5_ejoku")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1434364, 3.9201736, 2.9611812)
+
+[node name="Ceiling Light8" parent="corner" instance=ExtResource("5_ejoku")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9476547, 3.8940182, -1.1106794)
+
+[node name="Door_Exit_fake" parent="corner" instance=ExtResource("6_4nwh1")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -1.94627, 0.05000019, -5.020095)
+
+[node name="door" parent="corner/Door_Exit_fake/Armature/Skeleton3D" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_mn63m")
+
+[node name="Door_Enter" parent="corner" instance=ExtResource("10_bnqdd")]
+transform = Transform3D(-4.3711395e-08, 0, -1, 0, 1, 0, 1, 0, -4.3711395e-08, 5.9996266, 0.02140385, 2.9108186)
+
+[node name="button_large" parent="corner" instance=ExtResource("11_upb6p")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 13.219774, 0.049999952, 2.5437102)
+
+[node name="Door_Exit" parent="corner" instance=ExtResource("12_6noeb")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 15.555171, 0.05000019, -2.0980456)
+buttons = Array[NodePath]([NodePath("../button_large")])
+
+[node name="Checkpoint" parent="corner" instance=ExtResource("13_6noeb")]
+transform = Transform3D(-1, -8.742278e-08, -3.821371e-15, 0, -4.371139e-08, 1, -8.742278e-08, 1, 4.371139e-08, 18.492287, -0.03757602, 3.793767)
+
+[node name="67" parent="." instance=ExtResource("14_ejoku")]
+transform = Transform3D(6.556709e-07, 0, -5, 0, 5, 0, 5, 0, 6.556709e-07, -8, 0, 5)
+
+[node name="Checkpoint" parent="." instance=ExtResource("13_6noeb")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -17.808254, -0.038155317, 8.495644)
+
+[node name="Ceiling Light" parent="." instance=ExtResource("5_ejoku")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.276371, 4.001943, -1.6855546)
+
+[node name="Ceiling Light2" parent="." instance=ExtResource("5_ejoku")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.276371, 4.001943, -1.6855546)
+
+[node name="Ceiling Light3" parent="." instance=ExtResource("5_ejoku")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.656443, 4.033314, 4.456985)
+
+[node name="Ceiling Light4" parent="." instance=ExtResource("5_ejoku")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.656443, 4.033314, 4.456985)
+
+[node name="Ceiling Light5" parent="." instance=ExtResource("5_ejoku")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.656443, 4.033314, 4.456985)
+
+[node name="Ceiling Light6" parent="." instance=ExtResource("5_ejoku")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.656443, 4.033314, 9.456985)
+
+[node name="Ceiling Light7" parent="." instance=ExtResource("5_ejoku")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.656443, 4.033314, 9.456985)
+
+[node name="Ceiling Light8" parent="." instance=ExtResource("5_ejoku")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.656443, 4.033314, 9.456985)
+
+[node name="Ceiling Light9" parent="." instance=ExtResource("5_ejoku")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.656443, 4.033314, 14.456985)
+
+[node name="Ceiling Light10" parent="." instance=ExtResource("5_ejoku")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.656443, 4.033314, 14.456985)
+
+[node name="Ceiling Light11" parent="." instance=ExtResource("5_ejoku")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.656443, 4.033314, 14.456985)
+
+[node name="Player_pawn" parent="." instance=ExtResource("15_4nwh1")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 1.8999658, 0.47757593, 0.15418682)
+
+[editable path="corner/Door_Exit_fake"]

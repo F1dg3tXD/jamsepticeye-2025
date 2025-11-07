@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://cdn2qjp2c1cw7"]
+
+[ext_resource type="PackedScene" uid="uid://b5irrkw37k0vc" path="res://models/props/67/67.glb" id="1_afbb1"]
+[ext_resource type="Material" uid="uid://cy8hn3o638la1" path="res://models/67.tres" id="2_afbb1"]
+
+[node name="67" instance=ExtResource("1_afbb1")]
+
+[node name="Text" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_afbb1")

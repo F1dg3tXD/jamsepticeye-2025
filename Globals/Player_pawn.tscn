@@ -24,34 +24,59 @@ shape = SubResource("CapsuleShape3D_j6vuq")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25, 0)
 
 [node name="Skeleton3D" parent="player/Armature" index="0"]
-bones/1/rotation = Quaternion(-0.016531829, 0.058336604, 0.028298974, 0.9977589)
-bones/2/rotation = Quaternion(0.0224188, 0.06869013, 0.0032438235, 0.99738085)
-bones/3/rotation = Quaternion(0.023216713, 0.06868426, 0.0017020982, 0.9973669)
-bones/4/rotation = Quaternion(0.14152667, 0.064390965, -0.029484704, 0.987398)
-bones/5/rotation = Quaternion(0.008485684, 0.17368284, 0.069469586, 0.9823118)
-bones/7/rotation = Quaternion(-0.55078, -0.458442, 0.5847829, -0.38013315)
-bones/8/rotation = Quaternion(0.19799513, -0.18212397, 0.4289835, 0.8623236)
-bones/9/rotation = Quaternion(-0.07750454, 0.007301356, 0.65081036, 0.7552389)
-bones/10/rotation = Quaternion(-0.1350806, -0.46341562, -0.3654359, 0.7958995)
-bones/31/rotation = Quaternion(0.4429349, -0.4169173, 0.5586507, 0.5638246)
-bones/32/rotation = Quaternion(0.34149188, 0.06379939, -0.7807965, 0.5192975)
-bones/33/rotation = Quaternion(-0.022883734, -0.008991308, -0.24216299, 0.9699241)
-bones/34/rotation = Quaternion(-0.17421937, 0.44666496, 0.19817837, 0.8549054)
-bones/55/rotation = Quaternion(0.123687044, 0.23895575, 0.949541, -0.1611634)
-bones/56/rotation = Quaternion(-0.24268982, -0.08651483, 0.026712848, 0.96586925)
-bones/57/rotation = Quaternion(0.4494975, -0.08017246, -0.025181133, 0.88932025)
-bones/60/rotation = Quaternion(-0.12716396, 0.10193586, 0.9848243, 0.059663422)
-bones/61/rotation = Quaternion(-0.196016, -0.074125856, -0.0052235625, 0.97778106)
-bones/62/rotation = Quaternion(0.53157556, 0.12977238, 0.048273172, 0.83561724)
+bones/0/position = Vector3(-0.0033305662, 0.00054463977, -0.8959751)
+bones/0/rotation = Quaternion(-0.66203916, -0.34068763, 0.3257324, 0.5826959)
+bones/1/rotation = Quaternion(-0.015914714, 0.058084857, 0.029033836, 0.9977625)
+bones/2/rotation = Quaternion(0.022401938, 0.06854851, 0.0030624224, 0.9973916)
+bones/3/rotation = Quaternion(0.02305495, 0.06858998, 0.0015430179, 0.9973774)
+bones/4/rotation = Quaternion(0.14102238, 0.06426483, -0.029192317, 0.9874871)
+bones/5/rotation = Quaternion(0.008661673, 0.17288978, 0.071030155, 0.9823385)
+bones/7/rotation = Quaternion(-0.55184835, -0.45763463, 0.5853348, -0.37870473)
+bones/8/rotation = Quaternion(0.19763407, -0.18425338, 0.4296099, 0.86164194)
+bones/9/rotation = Quaternion(-0.077513464, 0.0073007136, 0.6508854, 0.7551732)
+bones/10/rotation = Quaternion(-0.13089475, -0.46051604, -0.37061438, 0.79588735)
+bones/31/rotation = Quaternion(0.44336304, -0.41662696, 0.5585918, 0.5637611)
+bones/32/rotation = Quaternion(0.34425375, 0.065125205, -0.7797293, 0.5189126)
+bones/33/rotation = Quaternion(-0.022958785, -0.00898943, -0.2429568, 0.96972376)
+bones/34/rotation = Quaternion(-0.17397252, 0.4446235, 0.20206046, 0.85511124)
+bones/55/rotation = Quaternion(0.124497905, 0.2432508, 0.9480359, -0.16296433)
+bones/56/rotation = Quaternion(-0.2496668, -0.08465065, 0.027209196, 0.9642409)
+bones/57/rotation = Quaternion(0.4513199, -0.0795559, -0.025999967, 0.8884285)
+bones/60/rotation = Quaternion(-0.12730482, 0.107494704, 0.9842224, 0.059536777)
+bones/61/rotation = Quaternion(-0.20808163, -0.07415644, -0.0035236503, 0.97529)
+bones/62/rotation = Quaternion(0.5364108, 0.12935245, 0.046439994, 0.8326913)
 
 [node name="GEO-body_male_stylized" parent="player/Armature/Skeleton3D" index="0"]
 cast_shadow = 3
 
 [node name="BoneAttachment3D" parent="player/Armature/Skeleton3D" index="1"]
-transform = Transform3D(0.0072329044, -0.16753468, 0.98583925, 0.0028090663, 0.98586464, 0.16751869, -0.9999693, 0.0015576482, 0.00760141, -0.084014535, 0.40729347, -1.3631644)
+transform = Transform3D(0.02939561, -0.20000465, 0.97935355, -0.19150384, 0.9605004, 0.20190263, -0.981051, -0.19348517, -0.010067314, -0.08512624, 0.2983237, -1.4252149)
 
 [node name="freeze gun" parent="player/Armature/Skeleton3D/BoneAttachment3D/FreezeGun" index="0"]
 cast_shadow = 3
+
+[node name="GodotIKRoot" type="GodotIKRoot" parent="player/Armature/Skeleton3D" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.2499948)
+
+[node name="GodotIK_RightFoot" type="GodotIKEffector" parent="player/Armature/Skeleton3D/GodotIKRoot"]
+bone_name = "mixamorig_RightFoot"
+bone_idx = 62
+chain_length = 3
+active = false
+transform = Transform3D(-0.86602545, -0.25000003, 0.43301287, 0.3535535, 0.30618623, 0.8838835, -0.35355338, 0.9185586, -0.17677668, -0.14653715, -0.3774851, 0.0041733235)
+
+[node name="GodotIK_LeftFoot" type="GodotIKEffector" parent="player/Armature/Skeleton3D/GodotIKRoot"]
+bone_name = "mixamorig_LeftFoot"
+bone_idx = 57
+chain_length = 3
+active = false
+transform = Transform3D(-1, 0, 8.742278e-08, 4.371139e-08, 0.8660254, 0.5, -7.5710346e-08, 0.5, -0.8660254, 0.08728871, 0.24730802, 0.087172195)
+
+[node name="GodotIK" type="GodotIK" parent="player/Armature/Skeleton3D" index="3"]
+
+[node name="GodotIKEffector" type="GodotIKEffector" parent="player/Armature/Skeleton3D/GodotIK"]
+chain_length = 1
+active = false
 
 [node name="Head" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
@@ -141,6 +166,10 @@ theme_override_font_sizes/font_size = 51
 text = "No Checkpoint Available"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="footTargetL" type="Node3D" parent="."]
+
+[node name="footTargetR" type="Node3D" parent="."]
 
 [editable path="player"]
 [editable path="player/Armature/Skeleton3D/BoneAttachment3D/FreezeGun"]

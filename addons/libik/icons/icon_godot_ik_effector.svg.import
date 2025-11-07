@@ -2,22 +2,21 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dh17mpyb0f716"
-path.s3tc="res://.godot/imported/texture_01.png-17064d071fc3b35f80bd96ad2778d1df.s3tc.ctex"
-path.etc2="res://.godot/imported/texture_01.png-17064d071fc3b35f80bd96ad2778d1df.etc2.ctex"
+uid="uid://cnge63ettnckl"
+path="res://.godot/imported/icon_godot_ik_effector.svg-41b96187c49eb3e509b756e6bfb35396.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc", "etc2_astc"],
-"vram_texture": true
+"has_editor_variant": true,
+"vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/kenney_prototype-textures/PNG/Red/texture_01.png"
-dest_files=["res://.godot/imported/texture_01.png-17064d071fc3b35f80bd96ad2778d1df.s3tc.ctex", "res://.godot/imported/texture_01.png-17064d071fc3b35f80bd96ad2778d1df.etc2.ctex"]
+source_file="res://addons/libik/icons/icon_godot_ik_effector.svg"
+dest_files=["res://.godot/imported/icon_godot_ik_effector.svg-41b96187c49eb3e509b756e6bfb35396.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
@@ -39,4 +38,7 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1
+svg/scale=1.0
+editor/scale_with_editor_scale=true
+editor/convert_colors_with_editor_theme=false
