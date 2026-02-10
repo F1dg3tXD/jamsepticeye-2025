@@ -8,24 +8,32 @@
 
 config_version=5
 
+[animation]
+
+compatibility/default_parent_skeleton_in_mesh_instance_3d=true
+
 [application]
 
 config/name="Corpse Tools"
 config/description="Go Freeze Yourself!"
 config/version="0.0.2b (Jamsepticeye)"
 run/main_scene="res://UI_Test/scenes/opening/opening_with_logo.tscn"
-config/features=PackedStringArray("4.5")
+config/features=PackedStringArray("4.6")
 boot_splash/image="uid://ceykrghbg84rn"
-config/icon="uid://ceykrghbg84rn"
+config/icon="uid://cof2eflcpfrso"
 config/macos_native_icon="res://corpse_tools_icon.icns"
 config/windows_native_icon="res://corpse_tools_icon.ico"
 
+[audio]
+
+buses/default_bus_layout="uid://hmoo4ixi31t0"
+
 [autoload]
 
-AppConfig="*res://addons/maaacks_menus_template/base/scenes/autoloads/app_config.tscn"
-SceneLoader="*res://addons/maaacks_menus_template/base/scenes/autoloads/scene_loader.tscn"
-ProjectMusicController="*res://addons/maaacks_menus_template/base/scenes/autoloads/project_music_controller.tscn"
-ProjectUISoundController="*res://addons/maaacks_menus_template/base/scenes/autoloads/project_ui_sound_controller.tscn"
+AppConfig="*uid://cjke6crjg14a0"
+SceneLoader="*uid://cbwmrnp0af35y"
+ProjectMusicController="*uid://r5t485lr3p7t"
+ProjectUISoundController="*uid://cc37235kj4384"
 Game="*res://Globals/Game.gd"
 
 [display]

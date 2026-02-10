@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://chpgf534rhj3i"]
+[gd_scene format=3 uid="uid://chpgf534rhj3i"]
 
 [ext_resource type="PackedScene" uid="uid://sikc02ddepyt" path="res://addons/maaacks_menus_template/base/scenes/opening/opening.tscn" id="1_42iib"]
 [ext_resource type="Script" uid="uid://c3igmmfqhi6u5" path="res://UI_Test/scenes/opening/opening.gd" id="2_nv508"]
@@ -6,6 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://b0ixe3isejq51" path="res://UI_Test/assets/godot_engine_logo/logo_vertical_color_dark.png" id="3_jo2m3"]
 [ext_resource type="Texture2D" uid="uid://ceykrghbg84rn" path="res://corpse_tools_icon.png" id="4_nv508"]
 
-[node name="Opening" instance=ExtResource("1_42iib")]
+[node name="Opening" unique_id=1598720298 instance=ExtResource("1_42iib")]
 script = ExtResource("2_nv508")
 images = Array[Texture2D]([ExtResource("3_6iicc"), ExtResource("3_jo2m3"), ExtResource("4_nv508")])
