@@ -13,3 +13,9 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 		print("Checkpoint updated:", checkpoint_spawn.global_transform)
 		# Store this checkpoint's spawn as the global respawn point
 		Game.last_checkpoint = checkpoint_spawn
+		Game.register_activation(self)
+
+func apply_activated_state():
+	# Visually indicate this checkpoint reached (e.g., change color or stop rotating)
+	rotation_speed = 0.05 # Spin faster or something
+	checkpoint_text.modulate = Color.GREEN

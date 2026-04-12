@@ -35,6 +35,7 @@ SceneLoader="*uid://cbwmrnp0af35y"
 ProjectMusicController="*uid://r5t485lr3p7t"
 ProjectUISoundController="*uid://cc37235kj4384"
 Game="*res://Globals/Game.gd"
+XMBSave="*uid://l0v1uvul8mvx"
 
 [display]
 
@@ -43,7 +44,7 @@ window/size/viewport_height=720
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/maaacks_menus_template/plugin.cfg")
+enabled=PackedStringArray("res://addons/godot_xmb/plugin.cfg", "res://addons/maaacks_menus_template/plugin.cfg")
 
 [global_group]
 

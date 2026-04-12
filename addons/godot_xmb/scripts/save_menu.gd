@@ -33,6 +33,8 @@ const VISIBLE_RANGE := 4
 const SPACING := 110
 const CENTER_Y := 360  # adjust to your screen center
 
+var _input_locked := true
+
 func _ready():
 	if XMBSave.ui_protection:
 		previous_focus_control = get_viewport().gui_get_focus_owner()
@@ -44,6 +46,10 @@ func _ready():
 	cancel_sfx.stream = load("res://addons/godot_xmb/assets/sounds/Cancel.mp3")
 	
 	on_slot_selected.visible = false
+	
+	process_mode = PROCESS_MODE_ALWAYS
+	_input_locked = true
+	get_tree().create_timer(0.15, true).timeout.connect(func(): _input_locked = false)
 	
 	refresh()
 
@@ -60,6 +66,7 @@ func add_entry(data: Dictionary, is_empty := false, disabled := false):
 	entry.setup(data, is_empty, disabled)
 
 func _on_entry_gui_input(event: InputEvent, index: int):
+	if _input_locked: return
 	if ui_state == UIState.BROWSE:
 		if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 			selected = index
@@ -129,6 +136,8 @@ func update_selection():
 		# 🎬 Animate everything
 		var tween = create_tween()
 		tween.set_parallel(true)
+		tween.set_process_mode(Tween.TWEEN_PROCESS_IDLE) # Ensures it runs during pause if node is ALWAYS
+		tween.set_pause_mode(Tween.TWEEN_PAUSE_PROCESS) # For Godot 4.x compatibility in some versions
 
 		tween.tween_property(entry, "position", target_pos, 0.2)
 		tween.tween_property(entry, "scale", Vector2.ONE * scale_factor, 0.2)
@@ -149,6 +158,7 @@ func _get_default_selection() -> int:
 var drag_accumulator := 0.0
 
 func _input(event):
+	if _input_locked: return
 	if ui_state == UIState.BROWSE:
 		if event is InputEventMouseButton and event.pressed:
 			if event.button_index == MOUSE_BUTTON_WHEEL_UP:
@@ -197,6 +207,7 @@ func _scroll_down():
 	update_selection()
 
 func _unhandled_input(event):
+	if _input_locked: return
 	if ui_state == UIState.BROWSE:
 		if event.is_action_pressed("ui_down"):
 			_scroll_down()

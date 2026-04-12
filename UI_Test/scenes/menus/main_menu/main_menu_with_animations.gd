@@ -35,3 +35,7 @@ func _ready() -> void:
 
 func _on_continue_game_button_pressed() -> void:
 	load_game_scene()
+
+
+func _on_load_game_button_pressed() -> void:
+	XMBSave.open_load_menu()

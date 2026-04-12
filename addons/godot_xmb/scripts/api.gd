@@ -139,6 +139,12 @@ func _load(id: String):
 	if get_tree().current_scene and get_tree().current_scene.scene_file_path == target_scene_path:
 		_apply_pending_loaded_save()
 	else:
+		# Wait for the new scene to be added before applying
+		var on_node_added = func(node: Node):
+			if node == get_tree().current_scene:
+				_apply_pending_loaded_save()
+		
+		get_tree().node_added.connect(on_node_added, CONNECT_ONE_SHOT)
 		get_tree().change_scene_to_file(target_scene_path)
 
 

@@ -14,7 +14,7 @@ func _ready() -> void:
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	if body.is_in_group("player_pawn"):
 		print("Loading next level...")
-		load_next_level()
+		call_deferred("load_next_level")
 
 func load_next_level() -> void:
 	if next_scene == "":

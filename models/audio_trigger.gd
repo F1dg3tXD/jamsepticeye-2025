@@ -40,6 +40,12 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 
 	# Prevent re-triggering this trigger (one-shot)
 	area_3d.set_deferred("monitoring", false)
+	Game.register_activation(self)
+
+func apply_activated_state():
+	# If loaded and already triggered, don't allow it to trigger again
+	if area_3d:
+		area_3d.monitoring = false
 
 
 func _stop_audio_on_bus(target_bus_name: String) -> void:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://bx4f628dg5i1j"]
+[gd_scene format=3 uid="uid://bx4f628dg5i1j"]
 
 [ext_resource type="Script" uid="uid://dy1nwgp6fb4cv" path="res://UI_Test/scenes/menus/main_menu/main_menu_with_animations.gd" id="2_1gpyj"]
 [ext_resource type="PackedScene" uid="uid://bk1stkp08or6k" path="res://UI_Test/scenes/overlaid_menus/master_options_overlaid_menu.tscn" id="3_xs16x"]
@@ -319,7 +319,7 @@ states/Start/position = Vector2(82, 123)
 transitions = ["Intro", "OpenMainMenu", SubResource("11"), "OpenMainMenu", "OpenSubMenu", SubResource("14"), "Start", "Intro", SubResource("AnimationNodeStateMachineTransition_j0orr"), "OpenSubMenu", "OpenMainMenu", SubResource("AnimationNodeStateMachineTransition_63dxc")]
 graph_offset = Vector2(-180.277, 49)
 
-[node name="MainMenu" type="Control"]
+[node name="MainMenu" type="Control" unique_id=838084750]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -331,24 +331,22 @@ game_scene_path = "uid://bgy4d7772gulk"
 options_packed_scene = ExtResource("3_xs16x")
 credits_packed_scene = ExtResource("4_osojs")
 
-[node name="UISoundController" type="Node" parent="."]
+[node name="UISoundController" type="Node" parent="." unique_id=855368407]
 script = ExtResource("4_twbsb")
 
-[node name="MenuAnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_2kqig")
-}
+[node name="MenuAnimationPlayer" type="AnimationPlayer" parent="." unique_id=721991329]
+libraries/ = SubResource("AnimationLibrary_2kqig")
 
-[node name="MenuAnimationTree" type="AnimationTree" parent="."]
+[node name="MenuAnimationTree" type="AnimationTree" parent="." unique_id=67045526]
 tree_root = SubResource("AnimationNodeStateMachine_vikuh")
 anim_player = NodePath("../MenuAnimationPlayer")
 parameters/conditions/intro_done = false
 
-[node name="BackgroundMusicPlayer" parent="." instance=ExtResource("5_t5a0p")]
+[node name="BackgroundMusicPlayer" parent="." unique_id=760850153 instance=ExtResource("5_t5a0p")]
 stream = ExtResource("6_t5a0p")
 parameters/looping = false
 
-[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+[node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=1004653579]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -357,14 +355,14 @@ grow_horizontal = 2
 grow_vertical = 2
 stretch = true
 
-[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=2068597411]
 handle_input_locally = false
 size = Vector2i(1280, 720)
 render_target_update_mode = 4
 
-[node name="menu_bg" parent="SubViewportContainer/SubViewport" instance=ExtResource("7_6va62")]
+[node name="menu_bg" parent="SubViewportContainer/SubViewport" unique_id=823748028 instance=ExtResource("7_6va62")]
 
-[node name="BackgroundTextureRect" type="TextureRect" parent="."]
+[node name="BackgroundTextureRect" type="TextureRect" parent="." unique_id=2044303389]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -374,7 +372,7 @@ grow_vertical = 2
 expand_mode = 1
 stretch_mode = 5
 
-[node name="VersionMargin" type="MarginContainer" parent="."]
+[node name="VersionMargin" type="MarginContainer" parent="." unique_id=2142470661]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -386,12 +384,12 @@ theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="VersionContainer" type="Control" parent="VersionMargin"]
+[node name="VersionContainer" type="Control" parent="VersionMargin" unique_id=449234408]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 mouse_filter = 2
 
-[node name="VersionLabel" type="Label" parent="VersionMargin/VersionContainer"]
+[node name="VersionLabel" type="Label" parent="VersionMargin/VersionContainer" unique_id=1372372743]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -406,7 +404,7 @@ text = "v0.0.2b (Jamsepticeye)"
 horizontal_alignment = 2
 script = ExtResource("6_6va62")
 
-[node name="MenuContainer" type="MarginContainer" parent="."]
+[node name="MenuContainer" type="MarginContainer" parent="." unique_id=475834464]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 15
@@ -415,16 +413,16 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TitleMargin" type="MarginContainer" parent="MenuContainer"]
+[node name="TitleMargin" type="MarginContainer" parent="MenuContainer" unique_id=470013214]
 layout_mode = 2
 theme_override_constants/margin_top = 24
 
-[node name="TitleContainer" type="Control" parent="MenuContainer/TitleMargin"]
+[node name="TitleContainer" type="Control" parent="MenuContainer/TitleMargin" unique_id=1280874492]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 mouse_filter = 2
 
-[node name="TitleLabel" type="Label" parent="MenuContainer/TitleMargin/TitleContainer"]
+[node name="TitleLabel" type="Label" parent="MenuContainer/TitleMargin/TitleContainer" unique_id=1958016408]
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
@@ -436,16 +434,16 @@ horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("7_c3vvd")
 
-[node name="SubTitleMargin" type="MarginContainer" parent="MenuContainer"]
+[node name="SubTitleMargin" type="MarginContainer" parent="MenuContainer" unique_id=805160334]
 layout_mode = 2
 theme_override_constants/margin_top = 92
 
-[node name="SubTitleContainer" type="Control" parent="MenuContainer/SubTitleMargin"]
+[node name="SubTitleContainer" type="Control" parent="MenuContainer/SubTitleMargin" unique_id=1945921699]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 mouse_filter = 2
 
-[node name="SubTitleLabel" type="Label" parent="MenuContainer/SubTitleMargin/SubTitleContainer"]
+[node name="SubTitleLabel" type="Label" parent="MenuContainer/SubTitleMargin/SubTitleContainer" unique_id=410647232]
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
@@ -456,18 +454,18 @@ text = "Freeze Yourself"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="MenuButtonsMargin" type="MarginContainer" parent="MenuContainer"]
+[node name="MenuButtonsMargin" type="MarginContainer" parent="MenuContainer" unique_id=989505432]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/margin_top = 136
 theme_override_constants/margin_bottom = 8
 
-[node name="MenuButtonsContainer" type="Control" parent="MenuContainer/MenuButtonsMargin"]
+[node name="MenuButtonsContainer" type="Control" parent="MenuContainer/MenuButtonsMargin" unique_id=1352426142]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 mouse_filter = 2
 
-[node name="MenuButtonsBoxContainer" type="BoxContainer" parent="MenuContainer/MenuButtonsMargin/MenuButtonsContainer"]
+[node name="MenuButtonsBoxContainer" type="BoxContainer" parent="MenuContainer/MenuButtonsMargin/MenuButtonsContainer" unique_id=1618464433]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 8
@@ -488,27 +486,32 @@ vertical = true
 script = ExtResource("8_gam6r")
 lock = true
 
-[node name="NewGameButton" type="Button" parent="MenuContainer/MenuButtonsMargin/MenuButtonsContainer/MenuButtonsBoxContainer"]
+[node name="NewGameButton" type="Button" parent="MenuContainer/MenuButtonsMargin/MenuButtonsContainer/MenuButtonsBoxContainer" unique_id=2080348040]
 unique_name_in_owner = true
 layout_mode = 2
 text = "New Game"
 
-[node name="OptionsButton" type="Button" parent="MenuContainer/MenuButtonsMargin/MenuButtonsContainer/MenuButtonsBoxContainer"]
+[node name="LoadGameButton" type="Button" parent="MenuContainer/MenuButtonsMargin/MenuButtonsContainer/MenuButtonsBoxContainer" unique_id=738149086]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Load Game"
+
+[node name="OptionsButton" type="Button" parent="MenuContainer/MenuButtonsMargin/MenuButtonsContainer/MenuButtonsBoxContainer" unique_id=147856112]
 unique_name_in_owner = true
 layout_mode = 2
 text = "Options"
 
-[node name="CreditsButton" type="Button" parent="MenuContainer/MenuButtonsMargin/MenuButtonsContainer/MenuButtonsBoxContainer"]
+[node name="CreditsButton" type="Button" parent="MenuContainer/MenuButtonsMargin/MenuButtonsContainer/MenuButtonsBoxContainer" unique_id=106184812]
 unique_name_in_owner = true
 layout_mode = 2
 text = "Credits"
 
-[node name="ExitButton" type="Button" parent="MenuContainer/MenuButtonsMargin/MenuButtonsContainer/MenuButtonsBoxContainer"]
+[node name="ExitButton" type="Button" parent="MenuContainer/MenuButtonsMargin/MenuButtonsContainer/MenuButtonsBoxContainer" unique_id=1320984951]
 unique_name_in_owner = true
 layout_mode = 2
 text = "Exit"
 
-[node name="MouseFilter" type="Control" parent="."]
+[node name="MouseFilter" type="Control" parent="." unique_id=977236663]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -519,6 +522,7 @@ mouse_filter = 2
 metadata/_edit_lock_ = true
 
 [connection signal="pressed" from="MenuContainer/MenuButtonsMargin/MenuButtonsContainer/MenuButtonsBoxContainer/NewGameButton" to="." method="_on_new_game_button_pressed"]
+[connection signal="pressed" from="MenuContainer/MenuButtonsMargin/MenuButtonsContainer/MenuButtonsBoxContainer/LoadGameButton" to="." method="_on_load_game_button_pressed"]
 [connection signal="pressed" from="MenuContainer/MenuButtonsMargin/MenuButtonsContainer/MenuButtonsBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]
 [connection signal="pressed" from="MenuContainer/MenuButtonsMargin/MenuButtonsContainer/MenuButtonsBoxContainer/CreditsButton" to="." method="_on_credits_button_pressed"]
 [connection signal="pressed" from="MenuContainer/MenuButtonsMargin/MenuButtonsContainer/MenuButtonsBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]
